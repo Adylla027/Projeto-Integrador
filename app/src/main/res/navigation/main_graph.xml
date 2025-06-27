@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fragmentTelaInicial">
+
+    <fragment
+        android:id="@+id/fragmentTelaInicial"
+        android:name="com.adylla.atividade4.FragmentTelaInicial"
+        android:label="fragment_tela_inicial"
+        tools:layout="@layout/fragment_tela_inicial" >
+        <action
+            android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.adylla.atividade4.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentSenha"
+            app:destination="@id/fragmentSenha" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentCadastro"
+            app:destination="@id/fragmentCadastro" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentTelaPaciente"
+            app:destination="@id/fragmentTelaPaciente" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="senha"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSenha"
+        android:name="com.adylla.atividade4.FragmentSenha"
+        android:label="fragment_senha"
+        tools:layout="@layout/fragment_senha" >
+        <action
+            android:id="@+id/action_fragmentSenha_to_fragmentLogin"
+            app:destination="@id/fragmentLogin">
+
+            <argument
+                android:name="email"
+                app:argType="string" />
+
+            <argument
+                android:name="senha"
+                app:argType="string" />
+
+
+            </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCadastro"
+        android:name="com.adylla.atividade4.FragmentCadastro"
+        android:label="fragment_cadastro"
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_fragmentCadastro_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTelaPaciente"
+        android:name="com.adylla.atividade4.FragmentTelaPaciente"
+        android:label="fragment_tela_paciente"
+        tools:layout="@layout/fragment_tela_paciente" >
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_fragmentMenu"
+            app:destination="@id/fragmentMenu" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="senha"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMenu"
+        android:name="com.adylla.atividade4.FragmentMenu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_fragmentMenu_to_fragmentTelaPaciente"
+            app:destination="@id/fragmentTelaPaciente" >
+
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="senha"
+            app:argType="string" />
+
+        </action>
+    </fragment>
+</navigation>

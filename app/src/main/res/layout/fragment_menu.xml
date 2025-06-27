@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="289dp"
+    android:layout_height="730dp"
+    tools:context=".FragmentMenu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="#A0CDE3">
+
+        <ImageView
+            android:id="@+id/imagemenu"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:contentDescription="Menu"
+            android:focusable="true"
+            android:src="@drawable/menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/viewlinha"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="71dp"
+        android:background="@color/black" />
+
+
+    <TextView
+        android:id="@+id/textviewcompartilhamentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compartilhamentos"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="87dp"
+        android:layout_marginStart="80dp"/>
+
+    <TextView
+        android:id="@+id/textviewfavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Favoritos"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="80dp"/>
+
+    <TextView
+        android:id="@+id/textviewlixeira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lixeira"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="160dp"
+        android:layout_marginStart="80dp"/>
+
+    <TextView
+        android:id="@+id/textviewmenuconfiguração"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Configurações"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="80dp"/>
+
+
+    <TextView
+        android:id="@+id/textviewmenusair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="80dp"/>
+
+
+</FrameLayout>

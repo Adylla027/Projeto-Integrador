@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentLogin"
+    android:background="#E3FFF0">
+
+    <LinearLayout
+        android:id="@+id/linerlayoutlogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="335dp"
+            android:layout_height="250dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="20dp"/>
+
+
+        <TextView
+            android:id="@+id/textViewLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_marginBottom="20sp"
+            android:layout_marginStart="8dp"/>
+
+
+        <EditText
+            android:id="@+id/EdittextEMAIL"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Insira seu email"
+            android:textColorHint="#99000000"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20sp"
+            android:layout_marginStart="8dp"/>
+
+        <EditText
+            android:id="@+id/EdittextSENHA"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Senha"
+            android:textColorHint="#99000000"
+            android:inputType="numberPassword"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="20sp"/>
+
+        <TextView
+            android:id="@+id/textviewSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esqueceu a senha?"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/black"
+            android:textColorLink="#6FCAF2"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="10sp"/>
+
+        <Button
+            android:id="@+id/buttnEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:backgroundTint="@color/black"
+            android:text="Entrar"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:id="@+id/textviewCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não têm cadastro? Cadastre-se"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/black"
+            android:textColorLink="#6FCAF2"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>
