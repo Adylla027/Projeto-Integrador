@@ -3,4 +3,6 @@
     <string name="titulo_intro_paciente">Paciente </string>
     <string name="btn_intro">Próximo</string>
     <string name="txt_intro_paciente">Registre seus sentimentos, escreva sobre o seu dia e acesse exercícios de relaxamento guiado. Tudo de forma prática e acolhedora.</string>
+    <string name="titulo_intro_profissional">Profissional</string>
+    <string name="txt_intro_profissional">Acompanhe o progresso dos seus pacientes com relatórios e identifique padrões emocionais para decisões mais assertivas no cuidado clínico.</string>
 </resources>
