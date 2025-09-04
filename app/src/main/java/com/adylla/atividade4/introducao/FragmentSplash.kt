@@ -1,19 +1,18 @@
-package com.adylla.atividade4
+package com.adylla.atividade4.introducao
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.adylla.atividade4.databinding.FragmentTelaInicialBinding
-import android.os.Handler
-import android.os.Looper
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.adylla.atividade4.R
+import com.adylla.atividade4.databinding.FragmentSplashBinding
 
-
-
-class FragmentTelaInicial : Fragment() {
-    private var _binding: FragmentTelaInicialBinding? = null
+class FragmentSplash : Fragment() {
+    private var _binding: FragmentSplashBinding? = null
     // This property is only valid between onCreateView and
 // onDestroyView.
     private val binding get() = _binding!!
@@ -23,7 +22,7 @@ class FragmentTelaInicial : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTelaInicialBinding.inflate(inflater, container, false)
+        _binding = FragmentSplashBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
