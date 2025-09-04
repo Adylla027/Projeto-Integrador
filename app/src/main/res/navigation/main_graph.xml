@@ -9,7 +9,7 @@
         android:id="@+id/fragmentTelaInicial"
         android:name="com.adylla.atividade4.FragmentTelaInicial"
         android:label="fragment_tela_inicial"
-        tools:layout="@layout/fragment_tela_inicial" >
+        tools:layout="@layout/fragment_tela_splash" >
         <action
             android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
