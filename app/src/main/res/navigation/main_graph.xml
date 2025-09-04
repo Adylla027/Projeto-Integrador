@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/fragmentTelaInicial"
-        android:name="com.adylla.atividade4.FragmentTelaInicial"
+        android:name="com.adylla.atividade4.introducao.FragmentSplash"
         android:label="fragment_tela_inicial"
-        tools:layout="@layout/fragment_tela_inicial" >
+        tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.adylla.atividade4.FragmentLogin"
+        android:name="com.adylla.atividade4.registros.FragmentLogin"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentSenha"
-        android:name="com.adylla.atividade4.FragmentSenha"
+        android:name="com.adylla.atividade4.registros.FragmentSenha"
         android:label="fragment_senha"
         tools:layout="@layout/fragment_senha" >
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastro"
-        android:name="com.adylla.atividade4.FragmentCadastro"
+        android:name="com.adylla.atividade4.registros.FragmentCadastro"
         android:label="fragment_cadastro"
         tools:layout="@layout/fragment_cadastro" >
         <action

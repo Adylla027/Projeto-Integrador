@@ -1,17 +1,19 @@
-package com.adylla.atividade4
+package com.adylla.atividade4.registros
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.adylla.atividade4.databinding.FragmentSenhaBinding
+import com.adylla.atividade4.R
+import com.adylla.atividade4.databinding.FragmentCadastroBinding
 
-
-class FragmentSenha : Fragment() {
-    private var _binding: FragmentSenhaBinding? = null
+class FragmentCadastro : Fragment() {
+    private var _binding: FragmentCadastroBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +21,7 @@ class FragmentSenha : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSenhaBinding.inflate(inflater, container, false)
+        _binding = FragmentCadastroBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -28,26 +30,31 @@ class FragmentSenha : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setaVoltar()
 
-        binding.buttnFINALIZAR.setOnClickListener{
+        binding.buttnCadastro.setOnClickListener {
 
             val email = binding.EdittextEMAIL.text.toString().trim()
             val senha = binding.EdittextSENHA.text.toString().trim()
 
-            if (email.isEmpty() || senha.isEmpty() ) {
-                Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
-            }  else {
-                val action = FragmentSenhaDirections.actionFragmentSenhaToFragmentLogin(email, senha)
+            //Validação do email e senha.
+            if (email.isEmpty() || senha.isEmpty()) {
+                Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                val action = FragmentCadastroDirections.actionFragmentCadastroToFragmentLogin(email,senha)
+
+
+
                 findNavController().navigate(action)
             }
         }
-
     }
 
     private fun setaVoltar(){
         binding.Imageseta.setOnClickListener{
-            findNavController().navigate(R.id.action_fragmentSenha_to_fragmentLogin)
+            findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
         }
     }
+
 
 
 
