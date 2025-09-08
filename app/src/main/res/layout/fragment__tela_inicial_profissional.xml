@@ -80,6 +80,7 @@
 
 
        <LinearLayout
+           android:id="@+id/linearlayoutAVISOCONSULTA"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:orientation="vertical">
@@ -119,21 +120,21 @@
 
     </androidx.cardview.widget.CardView>
 
+    <!-- Linha Superior -->
+
     <TextView
         android:id="@+id/textview4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agenda do dia"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
+        android:text="Agenda do dia"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/cardviewConsulta"
-        app:layout_constraintStart_toStartOf="@id/cardviewConsulta"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="70dp"
         android:textSize="20dp"
-        />
+        app:layout_constraintStart_toStartOf="@id/cardviewConsulta"
+        app:layout_constraintTop_toBottomOf="@id/cardviewConsulta" />
 
-    <!-- Linha Superior -->
     <View
         android:id="@+id/view_top_line"
         android:layout_width="0dp"
@@ -148,27 +149,28 @@
         />
 
     <!-- Linha Inferior -->
-
     <View
         android:id="@+id/view_bottom_line"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="@color/black"
-        app:layout_constraintBttom_toBottomOf="60d"
+        app:layout_constraintBttom_toBottomOf="30dp"
         app:layout_constraintEnd_toEndOf="@id/view_top_line"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/view_top_line"
-        tools:layout_editor_absoluteY="612dp" />
+        tools:layout_editor_absoluteY="520dp" />
 
     <!-- Linha esquerda!-->
+
     <View
         android:id="@+id/view_left_line"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="@color/black"
+        app:layout_editor_absoluteY="60dp"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_line"
         app:layout_constraintStart_toStartOf="@id/view_top_line"
-        app:layout_constraintTop_toBottomOf="@id/view_top_line"
-        app:layout_constraintBottom_toTopOf="@id/view_bottom_line" />
+        app:layout_constraintTop_toBottomOf="@id/view_top_line" />
 
     <!-- Linha Lateral Direita -->
     <View
@@ -176,10 +178,131 @@
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_line"
         app:layout_constraintEnd_toEndOf="@id/view_top_line"
-        app:layout_constraintTop_toBottomOf="@id/view_top_line"
-        app:layout_constraintBottom_toTopOf="@id/view_bottom_line" />
+        app:layout_constraintTop_toBottomOf="@id/view_top_line" />
 
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewAGENDA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="54dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_top_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/texto_formatado_Leticia"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textview6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/texto_formatado_Alex"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textview7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/texto_formatado_Annelise"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textview8"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/texto_formatado_Adylla"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textview9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="8dp"
+        android:text="Pacientes"
+        app:layout_constraintBottom_toTopOf="@+id/botaofluante"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botaofluante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:contentDescription="botão para a lista de pacientes"
+        android:focusable="true"
+        android:src="@drawable/icone_pacientes"
+        app:backgroundTint="#BDDCEC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardviewAGENDA"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="#A4B7C2" />
+
+    <TextView
+        android:id="@+id/textview10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="8dp"
+        android:text="Pacientes"
+        app:layout_constraintBottom_toTopOf="@+id/botaofluante2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toEndOf="@+id/textview9" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botaofluante2"
+        android:layout_width="58dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:clickable="true"
+        android:contentDescription="botão para a lista de pacientes"
+        android:focusable="true"
+        android:src="@drawable/icone_pacientes"
+        app:backgroundTint="#BDDCEC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/botaofluante"
+        app:layout_constraintTop_toBottomOf="@+id/cardviewAGENDA"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="#A4B7C2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

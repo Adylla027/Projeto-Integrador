@@ -5,4 +5,34 @@
     <string name="txt_intro_paciente">Registre seus sentimentos, escreva sobre o seu dia e acesse exercícios de relaxamento guiado. Tudo de forma prática e acolhedora.</string>
     <string name="titulo_intro_profissional">Profissional</string>
     <string name="txt_intro_profissional">Acompanhe o progresso dos seus pacientes com relatórios e identifique padrões emocionais para decisões mais assertivas no cuidado clínico.</string>
+
+
+    <string name="texto_formatado_Leticia">
+        <b>Leticia Oliveira:</b>
+        <i>   9:00 • consulta presencial</i>
+    </string>
+
+
+
+    <string name="texto_formatado_Alex">
+    <b>Alex Sorace:</b>
+     <i> 10:00 • consulta presencial</i>
+    </string>
+
+
+
+    <string name="texto_formatado_Annelise">
+    <b>Annelise Amaral:</b>
+     <i> 11:00 • consulta presencial</i>
+    </string>
+
+
+
+    <string name="texto_formatado_Adylla">
+    <b>Adylla Moreira:</b>
+     <i> 13:00 • consulta presencial</i>
+    </string>
+
+
 </resources>
+
