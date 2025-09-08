@@ -252,6 +252,8 @@
         android:layout_marginStart="96dp"
         android:layout_marginBottom="8dp"
         android:text="Pacientes"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/botaofluante"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -264,13 +266,14 @@
         android:clickable="true"
         android:contentDescription="botão para a lista de pacientes"
         android:focusable="true"
+        app:maxImageSize="30dp"
         android:src="@drawable/icone_pacientes"
         app:backgroundTint="#BDDCEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardviewAGENDA"
         app:layout_constraintVertical_bias="0.0"
-        app:tint="#A4B7C2" />
+        app:tint="#7A8A94" />
 
     <TextView
         android:id="@+id/textview10"
@@ -278,7 +281,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="8dp"
-        android:text="Pacientes"
+        android:text="Agenda"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/botaofluante2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
@@ -294,7 +299,8 @@
         android:clickable="true"
         android:contentDescription="botão para a lista de pacientes"
         android:focusable="true"
-        android:src="@drawable/icone_pacientes"
+        android:src="@drawable/calendar_lines"
+        app:maxImageSize="30dp"
         app:backgroundTint="#BDDCEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -302,7 +308,17 @@
         app:layout_constraintStart_toEndOf="@+id/botaofluante"
         app:layout_constraintTop_toBottomOf="@+id/cardviewAGENDA"
         app:layout_constraintVertical_bias="0.0"
-        app:tint="#A4B7C2" />
+        app:tint="#7A8A94" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="311dp"
+        android:layout_height="125dp"
+        android:src="@drawable/imagem_final_tela_profissional"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_bottom_line" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
