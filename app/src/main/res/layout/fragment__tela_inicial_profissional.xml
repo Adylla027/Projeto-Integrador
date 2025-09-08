@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,9 +7,12 @@
     tools:context=".Fragment_Tela_inicial_profissional">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="#ADD8E6">
+        android:background="#ADD8E6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageperfilProfissional"
@@ -18,10 +21,9 @@
             android:layout_marginStart="16dp"
             android:scaleType="centerCrop"
             android:src="@drawable/perfil_profissional"
-             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -41,59 +43,143 @@
             android:id="@+id/imagemenu"
             android:layout_width="50dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="20dp"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
             android:contentDescription="Menu"
+            android:focusable="true"
             android:src="@drawable/menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <View
+    <View
         android:id="@+id/viewlinha"
+        android:layout_width="408dp"
+        android:layout_height="7dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewConsulta"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_marginTop="71dp"
-        android:background="@color/black" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewlinha">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="106dp"
-        android:layout_marginTop="90dp"
-        android:orientation="vertical">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Próxima consulta"
-            android:textSize="16sp"
-            android:textStyle="bold">
+           <TextView
+               android:id="@+id/textview1"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:text="Próxima consulta"
+               android:textStyle="bold"
+               android:textColor="@color/black"
+               android:gravity="center_vertical"
+               android:paddingStart="16dp"
+               android:background="@color/white"/>
 
-        </TextView>
+           <TextView
+               android:id="@+id/textview2"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:text="Ashley Gabriela"
+               android:textColor="@color/black"
+               android:gravity="center_vertical"
+               android:paddingStart="16dp"
+               android:background="@color/white"/>
+
+           <TextView
+               android:id="@+id/textview3"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:text="8:00 • consulta presencial"
+               android:fontFamily="sans-serif-light"
+               android:textColor="@color/black"
+               android:gravity="center_vertical"
+               android:paddingStart="16dp"
+               android:background="@color/white"/>
+       </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agenda do dia"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/cardviewConsulta"
+        app:layout_constraintStart_toStartOf="@id/cardviewConsulta"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:textSize="20dp"
+        />
+
+    <!-- Linha Superior -->
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="@+id/textview4"
+        />
+
+    <!-- Linha Inferior -->
+
+    <View
+        android:id="@+id/view_bottom_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintBttom_toBottomOf="60d"
+        app:layout_constraintEnd_toEndOf="@id/view_top_line"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/view_top_line"
+        tools:layout_editor_absoluteY="612dp" />
+
+    <!-- Linha esquerda!-->
+    <View
+        android:id="@+id/view_left_line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="@id/view_top_line"
+        app:layout_constraintTop_toBottomOf="@id/view_top_line"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_line" />
+
+    <!-- Linha Lateral Direita -->
+    <View
+        android:id="@+id/view_right_line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/view_top_line"
+        app:layout_constraintTop_toBottomOf="@id/view_top_line"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_line" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Ashley Gabriela"
-            android:textSize="14sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="08:00 • Consulta Presencial"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
