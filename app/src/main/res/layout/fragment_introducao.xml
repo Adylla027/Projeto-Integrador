@@ -52,16 +52,18 @@
             android:text="Sou Paciente"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#38C5C5" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnProfissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sou Paciente"
+            android:text="Sou Profissional"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#38C5C5"/>
 
 
     </LinearLayout>
