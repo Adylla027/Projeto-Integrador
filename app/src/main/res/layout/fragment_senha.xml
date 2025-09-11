@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".registros.FragmentSenha"
     android:background="#E3FFF0">
 
@@ -12,30 +13,36 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/Imageseta"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:contentDescription="Voltar"
-            android:clickable="true"
-            android:focusable="true"
+        <Toolbar
+            android:id="@+id/toolbar_Cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:navigationIcon="@drawable/img_voltar"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/seta" />
+            android:layout_marginEnd="20dp"/>
 
+
+        <LinearLayout
+            android:id="@+id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="25dp"
+            android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/textviewRedefinirsenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Redefinir senha"
-            android:textStyle="bold"
+            android:text="Redefinir Senha"
             android:textColor="@color/black"
-            android:layout_marginBottom="30sp"
-            android:layout_marginTop="70sp"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="20sp"
-            android:textSize="30sp"/>
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginBottom="20sp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
 
         <EditText
             android:id="@+id/EdittextEMAIL"
@@ -43,9 +50,12 @@
             android:layout_height="48dp"
             android:hint="Insira seu email"
             android:textColorHint="#99000000"
+            android:background="@drawable/bg_edit_text"
             android:inputType="textEmailAddress"
-            android:layout_marginBottom="10sp"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginBottom="20sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="14dp"/>
 
         <EditText
             android:id="@+id/EdittextSENHA"
@@ -53,9 +63,12 @@
             android:layout_height="48dp"
             android:hint="Nova senha"
             android:textColorHint="#99000000"
+            android:background="@drawable/bg_edit_text"
             android:inputType="number"
-            android:layout_marginBottom="10sp"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginBottom="20sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="14dp"/>
 
         <EditText
             android:id="@+id/EdittextCONFIRMASENHA"
@@ -63,20 +76,37 @@
             android:layout_height="48dp"
             android:hint="Confirmar senha"
             android:textColorHint="#99000000"
+            android:background="@drawable/bg_edit_text"
             android:inputType="number"
             android:layout_marginBottom="20sp"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="14dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttnFINALIZAR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
-            android:layout_marginEnd="30sp"
-            android:backgroundTint="@color/black"
             android:text="Finalizar"
-            android:textSize="20sp"
-            android:layout_marginTop="20sp"/>
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_btn"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="12dp"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -84,4 +114,4 @@
 
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
