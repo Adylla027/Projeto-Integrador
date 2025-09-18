@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_diario"
+            android:title="Diário"
+            android:icon="@drawable/ic_menu_caneta"/>
+
+        <item
+            android:id="@+id/nav_agendamento"
+            android:title="Agendamento"
+            android:icon="@drawable/ic_menu_calendario"/>
+
+        <item
+            android:id="@+id/nav_compartilhamentos"
+            android:title="Compartilhamentos"
+            android:icon="@drawable/ic_menu_compartilhar"/>
+
+        <item
+            android:id="@+id/nav_favoritos"
+            android:title="Favoritos"
+            android:icon="@drawable/ic_menu_fav"/>
+
+        <item
+            android:id="@+id/nav_lixeira"
+            android:title="Lixeira"
+            android:icon="@drawable/ic_menu_lixeira"/>
+
+        <item
+            android:id="@+id/nav_configurações"
+            android:title="Configurações"
+            android:icon="@drawable/ic_menu_config"/>
+
+        <item
+            android:id="@+id/nav_sair"
+            android:title="Sair"
+            android:icon="@drawable/ic_menu_sair"/>
+
+    </group>
+
+</menu>

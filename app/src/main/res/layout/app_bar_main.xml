@@ -6,17 +6,16 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatBtn_Adicionar"
+        android:id="@+id/add_resgistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="Adicionar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity = "bottom|end"
+        android:layout_margin="16dp"
         android:src="@drawable/img_add"
-        android:backgroundTint="@color/color_details"/>
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
