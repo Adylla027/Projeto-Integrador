@@ -17,7 +17,7 @@ class FragmentToolbar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_toolbar, container, false)
+        return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
 }

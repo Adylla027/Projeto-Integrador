@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
+    android:id="@+id/scrollViewAgendamento"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,15 +19,16 @@
             android:background="#ADD8E6">
 
             <ImageView
-                android:id="@+id/imageperfil"
+                android:id="@+id/imageSetavoltar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="4dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_voltar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.631" />
 
             <TextView
                 android:id="@+id/textViewAgendamento"
@@ -77,6 +79,91 @@
             android:text="Escolha um horário:"
             android:textSize="22sp"
             android:textStyle="bold" />
+
+
+        <GridLayout
+            android:id="@+id/GridlayoutHorarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="16dp"
+            android:rowCount="3">
+
+            <Button
+                android:id="@+id/buttonHorario1"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:text="9:30"
+                android:textColor="@color/black"
+
+                />
+
+
+            <Button
+                android:id="@+id/buttonHorario2"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:text="10:30"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/buttonHorario3"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="10dp"
+                android:text="11:30"
+
+                />
+
+
+            <Button
+                android:id="@+id/buttonHorario4"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:text="14:30"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/buttonHorario5"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:text="15:30"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/buttonHorario6"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:text="16:30"
+                android:textColor="@color/black" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonSALVAR"
+            android:layout_width="221dp"
+            android:layout_height="48dp"
+            android:text="Salvar"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+
+            />
+
 
     </LinearLayout>
 </ScrollView>

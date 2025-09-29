@@ -3,6 +3,7 @@
     <style name="Base.Theme.Atividade4" parent="Theme.Material3.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/color_details</item>
 
     </style>
 

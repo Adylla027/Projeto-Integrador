@@ -154,11 +154,10 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="@color/black"
-        app:layout_constraintBttom_toBottomOf="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardviewAGENDA"
         app:layout_constraintEnd_toEndOf="@id/view_top_line"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/view_top_line"
-        tools:layout_editor_absoluteY="520dp" />
+        app:layout_constraintStart_toStartOf="@id/view_top_line" />
 
     <!-- Linha esquerda!-->
 

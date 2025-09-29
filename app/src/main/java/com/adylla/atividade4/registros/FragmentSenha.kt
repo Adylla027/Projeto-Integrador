@@ -44,7 +44,7 @@ class FragmentSenha : Fragment() {
     }
 
     private fun setaVoltar(){
-        binding.Imageseta.setOnClickListener{
+        binding.toolbarCadastro.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentSenha_to_fragmentLogin)
         }
     }

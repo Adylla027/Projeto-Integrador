@@ -50,7 +50,7 @@ class FragmentCadastro : Fragment() {
     }
 
     private fun setaVoltar(){
-        binding.Imageseta.setOnClickListener{
+        binding.toolbarCadastro.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
         }
     }
