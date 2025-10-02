@@ -100,6 +100,35 @@
         android:orientation="horizontal"
         >
 
+        <TextView
+            android:id="@+id/textviewdiario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="Diário"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/textViewGrafico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:text="Relatórios"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewSessoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:text="Sessões"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+
 
     </LinearLayout>
 
