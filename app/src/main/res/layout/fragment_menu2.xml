@@ -18,22 +18,19 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:elevation="4dp"/>
 
-
-        <FrameLayout
-            android:id="@+id/frame_Layout"
+        <View
+            android:id="@+id/viewlinha"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="5dp"
+            android:layout_marginTop="64dp"
+            android:background="@color/black"
+            app:layout_anchor="@+id/viewlinha"
+            app:layout_anchorGravity="bottom|center" />
 
-            <include
-                layout="@layout/app_bar_main"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
