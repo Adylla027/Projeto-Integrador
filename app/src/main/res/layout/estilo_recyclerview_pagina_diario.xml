@@ -5,23 +5,14 @@
     android:backgroundTint="@color/color_default"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="50dp"
 
-        >
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="50dp"
         android:padding="16dp"
         android:text="Férias"
-        android:textAlignment="center"
         android:textSize="20dp"
         android:drawablePadding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +22,7 @@
 
         />
 
-    </androidx.cardview.widget.CardView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
