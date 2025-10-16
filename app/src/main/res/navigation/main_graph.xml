@@ -11,8 +11,8 @@
         android:label="fragment_tela_inicial"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
-            app:destination="@id/fragmentLogin" />
+            android:id="@+id/action_fragmentTelaInicial_to_fragmentIntroducao"
+            app:destination="@id/fragmentIntroducao" />
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
@@ -71,9 +71,7 @@
         android:name="com.adylla.atividade4.FragmentTelaPaciente"
         android:label="fragment_tela_paciente"
         tools:layout="@layout/fragment_tela_paciente" >
-        <action
-            android:id="@+id/action_fragmentTelaPaciente_to_fragmentMenu"
-            app:destination="@id/fragmentMenu" />
+
         <argument
             android:name="email"
             app:argType="string" />
@@ -82,21 +80,8 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentMenu"
-        android:name="com.adylla.atividade4.FragmentMenu"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
-        <action
-            android:id="@+id/action_fragmentMenu_to_fragmentTelaPaciente"
-            app:destination="@id/fragmentTelaPaciente" >
-
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <argument
-            android:name="senha"
-            app:argType="string" />
-
-        </action>
-    </fragment>
+        android:id="@+id/fragmentIntroducao"
+        android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
+        android:label="fragment_introducao"
+        tools:layout="@layout/fragment_introducao" />
 </navigation>

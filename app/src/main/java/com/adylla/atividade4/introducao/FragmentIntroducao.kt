@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.adylla.atividade4.R
+import com.adylla.atividade4.databinding.FragmentIntroducaoBinding
 
 
 class FragmentIntroducao : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentIntroducaoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 

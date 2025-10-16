@@ -248,13 +248,13 @@
         android:id="@+id/textview9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="76dp"
         android:text="Pacientes"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/botaofluante"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/botaofluante" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botaofluante"
@@ -265,28 +265,26 @@
         android:clickable="true"
         android:contentDescription="botão para a lista de pacientes"
         android:focusable="true"
-        app:maxImageSize="30dp"
         android:src="@drawable/icone_pacientes"
         app:backgroundTint="#BDDCEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardviewAGENDA"
         app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="30dp"
         app:tint="#7A8A94" />
 
     <TextView
         android:id="@+id/textview10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="100dp"
         android:text="Agenda"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/botaofluante2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toEndOf="@+id/textview9" />
+        app:layout_constraintTop_toTopOf="@+id/botaofluante2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botaofluante2"
@@ -309,15 +307,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:tint="#7A8A94" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="311dp"
-        android:layout_height="125dp"
-        android:src="@drawable/imagem_final_tela_profissional"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_bottom_line" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
