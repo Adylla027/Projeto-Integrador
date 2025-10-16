@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PaginaDiario"
-    android:background="@color/color_background">
+    android:background="#F8FBE5">
 
 <ScrollView
     android:id="@+id/scrollViewDIARIO"

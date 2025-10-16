@@ -24,15 +24,8 @@ class FragmentMenu : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        navegaMenu()
     }
 // Abre e fecha o menu
-    private fun navegaMenu(){
-        binding.imagemenu.setOnClickListener{
-            findNavController().navigate(R.id.action_fragmentMenu_to_fragmentTelaPaciente)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragmentTelaInicial_to_fragmentIntroducao"
             app:destination="@id/fragmentIntroducao" />
+        <action
+            android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
@@ -78,10 +81,26 @@
         <argument
             android:name="senha"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_paginaDiario"
+            app:destination="@id/paginaDiario" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_agendamentoFragment"
+            app:destination="@id/agendamentoFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentIntroducao"
         android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
         android:label="fragment_introducao"
         tools:layout="@layout/fragment_introducao" />
+    <fragment
+        android:id="@+id/paginaDiario"
+        android:name="com.adylla.atividade4.PaginaDiario"
+        android:label="fragment_pagina_diario"
+        tools:layout="@layout/fragment_pagina_diario" />
+    <fragment
+        android:id="@+id/agendamentoFragment"
+        android:name="com.adylla.atividade4.AgendamentoFragment"
+        android:label="fragment_agendamento"
+        tools:layout="@layout/fragment_agendamento" />
 </navigation>

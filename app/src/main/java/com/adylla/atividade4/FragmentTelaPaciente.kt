@@ -27,7 +27,27 @@ class FragmentTelaPaciente : Fragment() {
         val view = binding.root
         return view
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        getExtra()
         setupImageSlider()
+
+        binding.Imagediario.setOnClickListener{
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+
+        }
+
+        binding.imagemAgendamento.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+        }
+    }
+
+    private fun getExtra(){
+        val email = args.email
+        val senha = args.senha
+        Toast.makeText(requireContext(),"Email: $email, Senha: $senha",Toast.LENGTH_SHORT).show()
     }
 
     private fun setupImageSlider() {
@@ -39,17 +59,6 @@ class FragmentTelaPaciente : Fragment() {
 
         binding.sliderImage.setImageList(imageList, ScaleTypes.FIT)
 
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        getExtra()
-    }
-
-    private fun getExtra(){
-        val email = args.email
-        val senha = args.senha
-        Toast.makeText(requireContext(),"Email: $email, Senha: $senha",Toast.LENGTH_SHORT).show()
     }
 
 
