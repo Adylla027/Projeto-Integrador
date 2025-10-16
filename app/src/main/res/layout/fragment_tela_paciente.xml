@@ -64,30 +64,25 @@
             android:id="@+id/Imagediario"
             android:layout_width="100dp"
             android:layout_height="80dp"
+            android:layout_marginStart="55dp"
             android:src="@drawable/ic_diario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <ImageView
-            android:id="@+id/Imagegrafico"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="30dp"
-            android:src="@drawable/ic_relatorios"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/Imagediario"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
+            android:focusable="true"/>
 
         <ImageView
             android:id="@+id/Imagesesseoes"
             android:layout_width="100dp"
             android:layout_height="80dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="35dp"
             android:src="@drawable/ic_sessoes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Imagegrafico"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 
@@ -107,32 +102,22 @@
             android:id="@+id/textviewdiario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="85dp"
             android:text="Diário"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="15sp"/>
 
-
-        <TextView
-            android:id="@+id/textViewGrafico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:text="Relatórios"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/textViewSessoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="Sessões"
+            android:layout_marginStart="70dp"
+            android:text="Agendamento"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="15sp"/>
 
 
 
