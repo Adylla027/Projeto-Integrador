@@ -34,12 +34,12 @@ class FragmentTelaPaciente : Fragment() {
         getExtra()
         setupImageSlider()
 
-        binding.Imagediario.setOnClickListener{
+        binding.cardViewDiario.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
 
         }
 
-        binding.imagemAgendamento.setOnClickListener {
+        binding.cardViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
         }
     }
