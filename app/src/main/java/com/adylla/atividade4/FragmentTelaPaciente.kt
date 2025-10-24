@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentTelaPacienteBinding
@@ -17,6 +18,8 @@ class FragmentTelaPaciente : Fragment() {
     private var _binding: FragmentTelaPacienteBinding? = null
     private val args: FragmentTelaPacienteArgs by navArgs()
     private val binding get() = _binding!!
+
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +37,9 @@ class FragmentTelaPaciente : Fragment() {
         getExtra()
         setupImageSlider()
 
+        initListenerMenu()
+
+        /*
         binding.cardViewDiario.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
 
@@ -42,8 +48,18 @@ class FragmentTelaPaciente : Fragment() {
         binding.cardViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
         }
+        */
+
     }
 
+    private fun initListenerMenu(){
+        toggle = ActionBarDrawerToggle(requireActivity(),binding.drawerLayout,binding.toolbar,R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+
+
+    }
     private fun getExtra(){
         val email = args.email
         val senha = args.senha

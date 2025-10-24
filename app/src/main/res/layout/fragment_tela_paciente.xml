@@ -1,186 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentTelaPaciente">
+    android:id="@+id/drawer_Layout"
+    tools:context=".FragmentTelaPaciente"
+    >
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <!--Conteudo principal-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"
-        android:padding="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:padding="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <View
+            android:id="@+id/viewlinha"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_anchorGravity="bottom|center"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            />
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider_image"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/viewlinha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_placeholder="@android:color/darker_gray"
+            app:iss_error_image="@android:color/darker_gray"
+            app:iss_corner_radius="5"
+            app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
+            app:iss_period="1000"
+            tools:ignore="MissingConstraints"
+            />
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/naview"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        android:layout_marginTop="?attr/actionBarSize"
         />
 
-    <View
-        android:id="@+id/viewlinha"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_anchorGravity="bottom|center"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        />
-
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/slider_image"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewlinha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:iss_auto_cycle="true"
-        app:iss_delay="0"
-        app:iss_placeholder="@android:color/darker_gray"
-        app:iss_error_image="@android:color/darker_gray"
-        app:iss_corner_radius="5"
-        app:iss_selected_dot="@drawable/default_selected_dot"
-        app:iss_unselected_dot="@drawable/default_unselected_dot"
-        app:iss_period="1000"
-        tools:ignore="MissingConstraints"
-        />
-
-    <TextView
-        android:id="@+id/textView_Categorias"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Categorias"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/slider_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="30dp"/>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_cards"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Categorias"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView_diario"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/color_details"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="8dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/Imagediario"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:clickable="true"
-                    android:contentDescription="botão que encaminha para diário"
-                    android:focusable="true"
-                    android:src="@drawable/ic_diario"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_diario"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Diário"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textAlignment="center"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView_agenda"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/color_details"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="8dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginStart="50dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView_agenda"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:clickable="true"
-                    android:contentDescription="botão que encaminha para diário"
-                    android:focusable="true"
-                    android:src="@drawable/ic_agendamento"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Agenda"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textAlignment="center"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView_lembretes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lembretes"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_cards"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="30dp"/>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
