@@ -38,7 +38,7 @@ class FragmentCadastro : Fragment() {
                 Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                val action = FragmentCadastroDirections.actionFragmentCadastroToFragmentLogin(email,senha)
+                val action: Int = R.id.action_fragmentCadastro_to_fragmentLogin
 
 
 
