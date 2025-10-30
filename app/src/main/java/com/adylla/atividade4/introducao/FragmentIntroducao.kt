@@ -29,9 +29,9 @@ class FragmentIntroducao : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnProfissional.setOnClickListener {
-            val action = FragmentIntroducaoDirections
-                .actionFragmentIntroducaoToFragmentIntroProfissional()
-            findNavController().navigate(action)
+            //val action = FragmentIntroducaoDirections
+            //    .actionFragmentIntroducaoToFragmentIntroProfissional()
+            //findNavController().navigate(action)
         }
     }
 

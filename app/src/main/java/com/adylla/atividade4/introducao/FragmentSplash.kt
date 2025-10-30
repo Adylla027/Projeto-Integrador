@@ -32,7 +32,7 @@ class FragmentSplash : Fragment() {
 
         // Navega automaticamente para a tela de login após 5 segundos
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_fragmentTelaInicial_to_fragmentIntroducao)
+            findNavController().navigate(R.id.action_fragmentTelaInicial_to_fragmentLogin)
         }, 10000) // tempo em milissegundos (5 segundos)
 
     }

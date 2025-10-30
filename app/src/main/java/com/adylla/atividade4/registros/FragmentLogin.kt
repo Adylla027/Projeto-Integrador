@@ -15,7 +15,7 @@ import com.adylla.atividade4.databinding.FragmentLoginBinding
 
 class FragmentLogin : Fragment() {
     private var _binding: FragmentLoginBinding? = null
-    private val args: FragmentLoginArgs by navArgs()
+
     private val binding get() = _binding!!
 
 

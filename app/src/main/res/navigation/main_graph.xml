@@ -11,9 +11,6 @@
         android:label="fragment_tela_inicial"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_fragmentTelaInicial_to_fragmentIntroducao"
-            app:destination="@id/fragmentIntroducao" />
-        <action
             android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
     </fragment>
@@ -35,12 +32,6 @@
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentTelaPaciente"
             app:destination="@id/fragmentTelaPaciente" />
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <argument
-            android:name="senha"
-            app:argType="string" />
 
     </fragment>
 
@@ -107,21 +98,6 @@
     </fragment>
 
 
-
-
-    <fragment
-        android:id="@+id/fragmentIntroducao"
-        android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
-        android:label="fragment_introducao"
-        tools:layout="@layout/fragment_introducao" >
-        <action
-            android:id="@+id/action_fragmentIntroducao_to_fragmentIntroProfissional"
-            app:destination="@id/fragmentIntroProfissional" />
-    </fragment>
-
-
-
-
     <fragment
         android:id="@+id/paginaDiario"
         android:name="com.adylla.atividade4.PaginaDiario"
@@ -143,18 +119,6 @@
         android:name="com.adylla.atividade4.Fragment_Tela_inicial_profissional"
         android:label="fragment__tela_inicial_profissional"
         tools:layout="@layout/fragment__tela_inicial_profissional" />
-
-
-
-    <fragment
-        android:id="@+id/fragmentIntroProfissional"
-        android:name="com.adylla.atividade4.introducao.FragmentIntroProfissional"
-        android:label="fragment_intro_profissional"
-        tools:layout="@layout/fragment_intro_profissional" >
-        <action
-            android:id="@+id/action_fragmentIntroProfissional_to_fragmentLogin2"
-            app:destination="@id/fragmentLogin" />
-    </fragment>
 
 
 </navigation>
