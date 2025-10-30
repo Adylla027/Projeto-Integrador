@@ -38,6 +38,9 @@ class FragmentLogin : Fragment() {
         criaCadastro()
 
 
+
+
+
         //caso o usuário tenha um  login
         binding.buttnEntrar.setOnClickListener{
 

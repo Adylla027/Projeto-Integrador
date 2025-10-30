@@ -17,6 +17,10 @@
             android:id="@+id/action_fragmentTelaInicial_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
     </fragment>
+
+
+
+
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="com.adylla.atividade4.registros.FragmentLogin"
@@ -39,6 +43,11 @@
             app:argType="string" />
 
     </fragment>
+
+
+
+
+
     <fragment
         android:id="@+id/fragmentSenha"
         android:name="com.adylla.atividade4.registros.FragmentSenha"
@@ -60,6 +69,10 @@
             </action>
 
     </fragment>
+
+
+
+
     <fragment
         android:id="@+id/fragmentCadastro"
         android:name="com.adylla.atividade4.registros.FragmentCadastro"
@@ -69,6 +82,10 @@
             android:id="@+id/action_fragmentCadastro_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
     </fragment>
+
+
+
+
     <fragment
         android:id="@+id/fragmentTelaPaciente"
         android:name="com.adylla.atividade4.FragmentTelaPaciente"
@@ -88,19 +105,56 @@
             android:id="@+id/action_fragmentTelaPaciente_to_agendamentoFragment"
             app:destination="@id/agendamentoFragment" />
     </fragment>
+
+
+
+
     <fragment
         android:id="@+id/fragmentIntroducao"
         android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
         android:label="fragment_introducao"
-        tools:layout="@layout/fragment_introducao" />
+        tools:layout="@layout/fragment_introducao" >
+        <action
+            android:id="@+id/action_fragmentIntroducao_to_fragmentIntroProfissional"
+            app:destination="@id/fragmentIntroProfissional" />
+    </fragment>
+
+
+
+
     <fragment
         android:id="@+id/paginaDiario"
         android:name="com.adylla.atividade4.PaginaDiario"
         android:label="fragment_pagina_diario"
         tools:layout="@layout/fragment_pagina_diario" />
+
+
+
     <fragment
         android:id="@+id/agendamentoFragment"
         android:name="com.adylla.atividade4.AgendamentoFragment"
         android:label="fragment_agendamento"
         tools:layout="@layout/fragment_agendamento" />
+
+
+
+    <fragment
+        android:id="@+id/fragment_Tela_inicial_profissional"
+        android:name="com.adylla.atividade4.Fragment_Tela_inicial_profissional"
+        android:label="fragment__tela_inicial_profissional"
+        tools:layout="@layout/fragment__tela_inicial_profissional" />
+
+
+
+    <fragment
+        android:id="@+id/fragmentIntroProfissional"
+        android:name="com.adylla.atividade4.introducao.FragmentIntroProfissional"
+        android:label="fragment_intro_profissional"
+        tools:layout="@layout/fragment_intro_profissional" >
+        <action
+            android:id="@+id/action_fragmentIntroProfissional_to_fragmentLogin2"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+
+
 </navigation>
