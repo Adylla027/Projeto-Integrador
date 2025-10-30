@@ -34,9 +34,17 @@ class FragmentCadastro : Fragment() {
         /*
         binding.buttnCadastro.setOnClickListener {
 
+            val nome = binding.EdittextNOME.text.toString().trim()
+            val dataNascimento = binding.EdittextNASCIMENTO.text.toString().trim()
+            val telefone = binding.EdittextTELEFONE.text.toString().trim()
             val email = binding.EdittextEMAIL.text.toString().trim()
             val senha = binding.EdittextSENHA.text.toString().trim()
+            val confirmarSenha = binding.EdittextCONFIRMASENHA.text.toString().trim()*/
 
+
+
+
+            /*
             //Validação do email e senha.
             if (email.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
@@ -51,7 +59,14 @@ class FragmentCadastro : Fragment() {
         }*/
     }
 
-    private fun registerUser(email: String, senha: String){
+    /*
+    private fun validacao(){
+        when{
+            nome.isEmpty
+        }
+    }*/
+
+    private fun registerUser(nome: String, email: String, senha: String){
         try {
             val auth = FirebaseAuth.getInstance()
 
