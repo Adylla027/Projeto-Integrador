@@ -11,12 +11,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.R
 import com.adylla.atividade4.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class FragmentLogin : Fragment() {
     private var _binding: FragmentLoginBinding? = null
 
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -32,6 +35,8 @@ class FragmentLogin : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        auth = FirebaseAuth.getInstance()
 
 
         novaSenha()
@@ -61,6 +66,36 @@ class FragmentLogin : Fragment() {
 
         }
     }
+
+    /*
+    private fun validacao(){
+
+        val emailDigitado = binding.EdittextEMAIL.text.toString().trim()
+        val senhaDigitada = binding.EdittextSENHA.text.toString().trim()
+
+        if (emailDigitado.isNotBlank()){
+            if (senhaDigitada.isNotBlank()){
+                loginUser(emailDigitado, senhaDigitada)
+            }
+        }
+
+    }*/
+
+    /*
+    private fun loginUser(email: String, senha: String){
+        try {
+            auth.signInWithEmailAndPassword(email, senha)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful){
+                        findNavController().navigate(R.id.action_fragmentLogin_to_fragmentTelaPaciente)
+                    }else{
+                        Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }catch (e: Exception){
+            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
+        }
+    }*/
 
     //O usuário não tem senha
     private fun novaSenha(){

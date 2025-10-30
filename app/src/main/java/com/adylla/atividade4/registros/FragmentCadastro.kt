@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.R
 import com.adylla.atividade4.databinding.FragmentCadastroBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class FragmentCadastro : Fragment() {
     private var _binding: FragmentCadastroBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +31,7 @@ class FragmentCadastro : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setaVoltar()
 
+        /*
         binding.buttnCadastro.setOnClickListener {
 
             val email = binding.EdittextEMAIL.text.toString().trim()
@@ -44,7 +48,26 @@ class FragmentCadastro : Fragment() {
 
                 findNavController().navigate(action)
             }
+        }*/
+    }
+
+    private fun registerUser(email: String, senha: String){
+        try {
+            val auth = FirebaseAuth.getInstance()
+
+            auth.createUserWithEmailAndPassword(email, senha)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
+
+                    } else {
+                        Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }catch (e: Exception){
+            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
         }
+
     }
 
     private fun setaVoltar(){

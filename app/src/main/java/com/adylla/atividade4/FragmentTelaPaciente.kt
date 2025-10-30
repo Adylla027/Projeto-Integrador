@@ -42,7 +42,7 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
 
         initListenerMenu()
 
-        /*
+
         binding.cardViewDiario.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
 
@@ -51,7 +51,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
         binding.cardViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
         }
-        */
 
     }
 
@@ -74,7 +73,7 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel(R.drawable.imagem_final_tela_profissional, "Diário"))
-        //imageList.add(SlideModel(R.drawable.logo, "Logo"))
+        imageList.add(SlideModel(R.drawable.logo, "Logo"))
 
         binding.sliderImage.setImageList(imageList, ScaleTypes.FIT)
 

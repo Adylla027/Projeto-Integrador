@@ -26,7 +26,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:padding="15dp"
@@ -120,7 +120,6 @@
                 android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
                 android:textAlignment="center"
                 android:textSize="12sp" />
-
 
         </LinearLayout>
     </ScrollView>
