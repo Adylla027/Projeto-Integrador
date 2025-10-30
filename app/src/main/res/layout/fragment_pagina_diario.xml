@@ -28,19 +28,19 @@
             android:layout_height="wrap_content"
             android:background="@color/color_details"
             android:padding="5dp"
-            app:navigationIcon="@drawable/img_voltar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/img_voltar">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="10dp"
                 android:text="Meu Diário"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:paddingTop="10dp"/>
+                android:textStyle="bold" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 

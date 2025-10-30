@@ -28,11 +28,19 @@ class FragmentIntroducao : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnProfissional.setOnClickListener {
-            //val action = FragmentIntroducaoDirections
-            //    .actionFragmentIntroducaoToFragmentIntroProfissional()
-            //findNavController().navigate(action)
+        binding.btnPaciente.setOnClickListener {
+            val action = FragmentIntroducaoDirections
+                .actionFragmentIntroducaoToFragmentIntroPaciente()
+            findNavController().navigate(action)
         }
+
+        binding.btnProfissional.setOnClickListener {
+
+            val action = FragmentIntroducaoDirections.actionFragmentIntroducaoToFragmentIntroProfissional2()
+            findNavController().navigate(action)
+
+        }
+
     }
 
 

@@ -126,7 +126,33 @@
         android:id="@+id/fragmentIntroducao"
         android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
         android:label="fragment_introducao"
-        tools:layout="@layout/fragment_introducao" />
+        tools:layout="@layout/fragment_introducao" >
+        <action
+            android:id="@+id/action_fragmentIntroducao_to_fragmentIntroPaciente"
+            app:destination="@id/fragmentIntroPaciente" />
+        <action
+            android:id="@+id/action_fragmentIntroducao_to_fragmentIntroProfissional2"
+            app:destination="@id/fragmentIntroProfissional2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntroPaciente"
+        android:name="com.adylla.atividade4.introducao.FragmentIntroPaciente"
+        android:label="fragment_intro_paciente"
+        tools:layout="@layout/fragment_intro_paciente" >
+        <action
+            android:id="@+id/action_fragmentIntroPaciente_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntroProfissional2"
+        android:name="com.adylla.atividade4.introducao.FragmentIntroProfissional"
+        android:label="fragment_intro_profissional"
+        tools:layout="@layout/fragment_intro_profissional" >
+        <action
+            android:id="@+id/action_fragmentIntroProfissional2_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
 
 
 </navigation>
