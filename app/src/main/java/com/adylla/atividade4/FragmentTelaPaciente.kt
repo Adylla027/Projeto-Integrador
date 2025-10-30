@@ -71,7 +71,7 @@ class FragmentTelaPaciente : Fragment() {
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel(R.drawable.imagem_final_tela_profissional, "Diário"))
-        imageList.add(SlideModel(R.drawable.logo, "Logo"))
+        imageList.add(SlideModel(R.drawable.logo2, "Logo"))
 
         binding.sliderImage.setImageList(imageList, ScaleTypes.FIT)
 
