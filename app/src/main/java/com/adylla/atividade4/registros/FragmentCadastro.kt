@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.R
 import com.adylla.atividade4.databinding.FragmentCadastroBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class FragmentCadastro : Fragment() {
     private var _binding: FragmentCadastroBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +26,7 @@ class FragmentCadastro : Fragment() {
         val view = binding.root
         return view
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,12 +42,27 @@ class FragmentCadastro : Fragment() {
                 Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                val action = R.id.action_fragmentCadastro_to_fragmentLogin
-
-
-
-                findNavController().navigate(action)
+                registerUser(email, senha)
             }
+        }
+    }
+
+    private fun registerUser(email: String, senha: String ){
+        try {
+            val auth = FirebaseAuth.getInstance()
+            auth.createUserWithEmailAndPassword(email, senha)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful){
+                        //mensagem de sucesso
+                        findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
+                    }else{
+                        //mensagem de erro
+                        Toast.makeText(requireContext(), "Erro ao cadasrar", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+        }catch (e : Exception){
+            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
