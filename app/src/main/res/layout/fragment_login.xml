@@ -8,15 +8,6 @@
     tools:context=".registros.FragmentLogin"
     android:background="#E3FFF0">
 
-    <ScrollView
-        android:id="@+id/scrollViewLogin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <LinearLayout
             android:id="@+id/linerlayoutlogin"
             android:layout_width="match_parent"
@@ -123,6 +114,5 @@
 
 
         </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
