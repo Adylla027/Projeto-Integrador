@@ -54,7 +54,7 @@ class FragmentCadastro : Fragment() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful){
                         //mensagem de sucesso
-                        findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
+                        Toast.makeText(requireContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
                     }else{
                         //mensagem de erro
                         Toast.makeText(requireContext(), "Erro ao cadasrar", Toast.LENGTH_SHORT).show()

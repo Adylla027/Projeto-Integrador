@@ -10,12 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.R
 import com.adylla.atividade4.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class FragmentSplash : Fragment() {
     private var _binding: FragmentSplashBinding? = null
     // This property is only valid between onCreateView and
 // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,

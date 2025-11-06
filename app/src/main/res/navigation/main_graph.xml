@@ -74,7 +74,9 @@
         tools:layout="@layout/fragment_cadastro" >
         <action
             android:id="@+id/action_fragmentCadastro_to_fragmentLogin"
-            app:destination="@id/fragmentLogin" />
+            app:destination="@id/fragmentLogin"
+            app:popUpTo="@id/fragmentLogin"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 
@@ -135,6 +137,7 @@
             app:destination="@id/fragmentIntroProfissional2" />
 
     </fragment>
+
     <fragment
         android:id="@+id/fragmentIntroPaciente"
         android:name="com.adylla.atividade4.introducao.FragmentIntroPaciente"
@@ -144,6 +147,7 @@
             android:id="@+id/action_fragmentIntroPaciente_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
     </fragment>
+
     <fragment
         android:id="@+id/fragmentIntroProfissional2"
         android:name="com.adylla.atividade4.introducao.FragmentIntroProfissional"
