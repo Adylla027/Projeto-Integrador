@@ -32,6 +32,10 @@ class FragmentCadastro : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setaVoltar()
 
+        validateData()
+    }
+
+    private fun validateData(){
         binding.buttnCadastro.setOnClickListener {
 
             val email = binding.EdittextEMAIL.text.toString().trim()
