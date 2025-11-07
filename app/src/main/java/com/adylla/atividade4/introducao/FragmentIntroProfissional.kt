@@ -28,7 +28,7 @@ class FragmentIntroProfissional : Fragment() {
         binding.buttonProximo.setOnClickListener {
 
             val action = FragmentIntroProfissionalDirections
-                .actionFragmentIntroProfissional2ToFragmentLogin()
+                .actionFragmentIntroProfissional2ToLoginProfissional()
                 findNavController().navigate(action)
         }
     }
