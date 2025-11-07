@@ -16,6 +16,11 @@
         <action
             android:id="@+id/action_fragmentTelaInicial_to_fragmentIntroducao"
             app:destination="@id/fragmentIntroducao" />
+        <action
+            android:id="@+id/action_fragmentTelaInicial_to_fragmentTelaPaciente"
+            app:destination="@id/fragmentTelaPaciente"
+            app:popUpTo="@id/fragmentTelaInicial"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 

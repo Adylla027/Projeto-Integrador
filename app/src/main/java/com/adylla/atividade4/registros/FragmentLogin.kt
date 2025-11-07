@@ -11,12 +11,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.R
 import com.adylla.atividade4.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class FragmentLogin : Fragment() {
     private var _binding: FragmentLoginBinding? = null
 
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -33,29 +36,47 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        auth = FirebaseAuth.getInstance()
+        validateData()
         novaSenha()
         criaCadastro()
 
+    }
 
+    private fun validateData(){
         //caso o usuário tenha um  login
         binding.buttnEntrar.setOnClickListener{
 
 
-            val emailDigitado = binding.EdittextEMAIL.text.toString().trim()
-            val senhaDigitada = binding.EdittextSENHA.text.toString().trim()
+            val email= binding.EdittextEMAIL.text.toString().trim()
+            val senha = binding.EdittextSENHA.text.toString().trim()
 
 
             //Validação do email e senha.
-            if(emailDigitado.isEmpty()|| senhaDigitada.isEmpty()){
+            if(email.isEmpty()|| senha.isEmpty()){
                 Toast.makeText(requireContext(),"Preencha o email e a senha!", Toast.LENGTH_SHORT).show()
             }
             else{
-                val action = FragmentLoginDirections.actionFragmentLoginToFragmentTelaPaciente(emailDigitado,senhaDigitada)
-
-                findNavController().navigate(action)
+                loginUser(email, senha)
             }
 
+        }
+    }
+
+    private fun loginUser(email: String, senha: String){
+        try {
+            auth.signInWithEmailAndPassword(email, senha)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful){
+                        val action = FragmentLoginDirections
+                            .actionFragmentLoginToFragmentTelaPaciente(email, senha)
+                        findNavController().navigate(action)
+                    }else{
+                        Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }catch (e: Exception){
+            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
