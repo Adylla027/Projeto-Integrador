@@ -10,7 +10,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:layout_width="match_parent"
@@ -41,7 +42,8 @@
             android:text="Um espaço dedicado ao cuidado emocional com acolhimento e praticidade"
             android:padding="4dp"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"/>
 
@@ -53,6 +55,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:background="@drawable/bg_btn"
             android:backgroundTint="#38C5C5" />
 
         <com.google.android.material.button.MaterialButton
@@ -60,9 +63,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sou Profissional"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:background="@drawable/bg_btn"
             android:backgroundTint="#38C5C5"/>
 
 
