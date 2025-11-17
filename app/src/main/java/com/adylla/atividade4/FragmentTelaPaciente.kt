@@ -43,7 +43,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
 
         initListenerMenu()
 
-        /*
         binding.cardViewDiario.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
 
@@ -52,7 +51,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
         binding.cardViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
         }
-        */
 
     }
 

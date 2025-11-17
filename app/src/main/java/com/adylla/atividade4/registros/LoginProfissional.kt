@@ -55,7 +55,7 @@ class LoginProfissional : Fragment() {
                 Toast.makeText(requireContext(), "Preencha com email e senha!", Toast.LENGTH_SHORT).show()
 
             }else{
-                loginUser()
+                loginUser(email,senha)
             }
 
         }
@@ -75,12 +75,14 @@ class LoginProfissional : Fragment() {
 
                         findNavController().navigate(action)
                     }else{
-                        Toast.makeText()
+                        Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
 
 
 
                 }
+        }catch (e: Exception){
+            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
