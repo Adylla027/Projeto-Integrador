@@ -35,6 +35,15 @@ class PaginaDiario : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navRegistros()
+
+        var menuAberto = false
+
+        binding.floatBtnAdicionar.setOnClickListener {
+            menuAberto = !menuAberto
+            binding.linearLayoutFloatBtn.visibility = if (menuAberto) View.VISIBLE else View.GONE
+        }
+
         binding.tollbarDiario.setOnClickListener{
             findNavController().navigateUp()
         }
@@ -68,6 +77,12 @@ class PaginaDiario : Fragment() {
 
             }
     }*/
+
+    private fun navRegistros(){
+        binding.btnTexto.setOnClickListener {
+            findNavController().navigate(R.id.action_paginaDiario_to_fragment_pagina_escrita_diario)
+        }
+    }
 
 
 

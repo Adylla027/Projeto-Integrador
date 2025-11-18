@@ -58,33 +58,29 @@
         </LinearLayout>
     </ScrollView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        android:background="#90000000"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
     <LinearLayout
-        android:id="@+id/menuFlutuante"
+        android:id="@+id/linearLayout_floatBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:background="@drawable/menu_background"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="90dp"
         android:orientation="vertical"
-        android:gravity="center"
         android:visibility="gone"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/floatBtn_Adicionar">
+        
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_diario"
+            app:backgroundTint="@color/color_details"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:padding="6dp"
-            android:src="@drawable/ic_diario"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFotografia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_diario"
+            app:backgroundTint="@color/color_details"/>
 
     </LinearLayout>
 
@@ -96,7 +92,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="Adicionar"
+        android:contentDescription="Adicionar registro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/img_add"
