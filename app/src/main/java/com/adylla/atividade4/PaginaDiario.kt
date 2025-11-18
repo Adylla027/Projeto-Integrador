@@ -48,35 +48,8 @@ class PaginaDiario : Fragment() {
             findNavController().navigateUp()
         }
 
-        /*reference = Firebase.database.reference
-        auth = Firebase.auth*/
 
     }
-
-    /*private fun saveRegister(){
-        reference
-            .child("register")
-            .child(auth.currentUser?.uid ?: "")
-            .child(task.id)
-            .setValue(task).addOnCompleteListener { result ->
-                if (result.isSuccessful){
-                    Toast.makeText(
-                        requireContext(),
-                        R.string.text_save_sucess_register_fragment,
-                        Toast.LENGH_SHORT).show()
-                    )
-
-                    if (newRegister){
-                        findNavController().popBackStack()
-                    }else{
-                        Toast.makeText(requireContext(), "Falha no registro", Toast.LENGH_SHORT).show()
-                    }
-                } else{
-                    showBottomSheet(message = getString(R.string.error_generic))
-                }
-
-            }
-    }*/
 
     private fun navRegistros(){
         binding.btnTexto.setOnClickListener {

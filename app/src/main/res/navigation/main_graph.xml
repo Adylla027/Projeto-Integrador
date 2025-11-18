@@ -184,9 +184,9 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_pagina_escrita_diario"
-        android:name="com.adylla.atividade4.fragment_pagina_escrita_diario"
+        android:name="com.adylla.atividade4.FragmentDiarioTexto"
         android:label="fragment_pagina_escrita_diario"
-        tools:layout="@layout/fragment_pagina_escrita_diario" />
+        tools:layout="@layout/fragment_diario_texto" />
 
 
 </navigation>

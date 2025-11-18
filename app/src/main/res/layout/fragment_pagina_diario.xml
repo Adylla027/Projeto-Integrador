@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PaginaDiario"
-    android:background="#F8FBE5">
+    tools:context=".PaginaDiario">
 
     <ScrollView
         android:id="@+id/scrollViewDIARIO"
@@ -65,22 +64,23 @@
         android:orientation="vertical"
         android:visibility="gone"
         android:gravity="center"
+        android:backgroundTint="@color/color_details"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/floatBtn_Adicionar">
         
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageView
             android:id="@+id/btnTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_diario"
-            app:backgroundTint="@color/color_details"/>
+            android:layout_gravity="center"
+            android:src="@drawable/ic_diario"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageView
             android:id="@+id/btnFotografia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_diario"
-            app:backgroundTint="@color/color_details"/>
+            android:layout_gravity="center"
+            android:src="@drawable/ic_diario"/>
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_pagina_escrita_diario">
+    tools:context=".FragmentDiarioTexto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="?attr/actionBarSize"/>
 
             <EditText
-                android:id="@+id/edit_Text"
+                android:id="@+id/editText_Titulo"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="30dp"
@@ -64,6 +64,7 @@
                 android:hint="Hoje...">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textMultiLine|textCapSentences"
@@ -75,6 +76,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSalvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Salvar"
