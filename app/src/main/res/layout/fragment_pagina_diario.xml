@@ -48,6 +48,7 @@
                 android:background="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_registro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/estilo_recyclerview_pagina_diario"

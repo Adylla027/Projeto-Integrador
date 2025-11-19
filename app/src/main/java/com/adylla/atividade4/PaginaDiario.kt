@@ -47,6 +47,8 @@ class PaginaDiario : Fragment() {
         auth = Firebase.auth
 
         navRegistros()
+        initRecyclerViewRegistro()
+        getRegistro()
 
         var menuAberto = false
 
@@ -62,13 +64,19 @@ class PaginaDiario : Fragment() {
 
     }
 
-    private fun initRecyclerViewRegistro(registroList: List<RegistroDiario>){
+    private fun initRecyclerViewRegistro(){
 
-        registroAdapter = RegistroAdapter(registroList)
-        binding.recyclerViewRegistro.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewRegistro.setHasFixedSize(true)
+        registroAdapter = RegistroAdapter(requireContext()) { title, id -> optionSelected(title, id)}
 
-        binding.recyclerViewRegistro.adapter = registroAdapter
+        with(binding.recyclerViewRegistro){
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = registroAdapter
+        }
+
+    }
+
+    private fun optionSelected(registroDiario: RegistroDiario){
 
     }
 
@@ -82,8 +90,8 @@ class PaginaDiario : Fragment() {
                     val registroList = mutableListOf<RegistroDiario>()
 
                     for (ds in p0.children){
-                        val registroDiario = ds.getValue(RegistroDiario::class.java) as RegistroDiario
-                        registroList.add(registroDiario)
+                        val registro = ds.getValue(RegistroDiario::class.java) as RegistroDiario
+                        registroList.add(registro)
                     }
                     registroAdapter.submitList(registroList)
                 }
@@ -100,8 +108,6 @@ class PaginaDiario : Fragment() {
             findNavController().navigate(R.id.action_paginaDiario_to_fragment_pagina_escrita_diario)
         }
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()
