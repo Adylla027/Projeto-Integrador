@@ -4,58 +4,49 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListAdapter
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.adylla.atividade4.databinding.EstiloRecyclerviewPaginaDiarioBinding
 
 class RegistroAdapter(
-    private val registroSelected: (RegistroDiario, Int) -> Unit
-): ListAdapter<RegistroDiario, RegistroDiario.MyViewHolder>(DIFF_CALBACK){
+    private val itemClick: (RegistroDiario, Int) -> Unit
+): RecyclerView.Adapter<RegistroAdapter.RegistroViewHolder> (){
 
-    companion object{
-        private val DIFF_CALBACK = object: DiffUtil.ItemCallback<RegistroDiario>(){
-            override fun areItemsTheSame(
-                oldItem: RegistroDiario,
-                newItem: RegistroDiario
-            ): Boolean {
-                return oldItem.id == newItem.id && oldItem.title == newItem.title
+    private val registro = mutableListOf<RegistroDiario>()
 
-            }
+    fun submitList(newList: List<RegistroDiario>){
+        registro.clear()
+        registro.addAll(newList)
+    }
 
-            override fun areContentsTheSame(
-                oldItem: RegistroDiario,
-                newItem: RegistroDiario
-            ): Boolean {
-                return oldItem == newItem && oldItem.title == newItem.title
-            }
-        }
-
+    inner class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val title = itemView.findViewById<TextView>(R.id.textTitulo_diario)
     }
 
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MyViewHolder {
+    ): RegistroViewHolder {
 
-        val binding= EstiloRecyclerviewPaginaDiarioBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding)
+       val view = LayoutInflater.from(parent.context).inflate(R.layout.estilo_recyclerview_pagina_diario, parent, false)
+        return RegistroViewHolder(view)
     }
 
     override fun onBindViewHolder(
-        holder: MyViewHolder,
+        holder: RegistroViewHolder,
         position: Int
     ) {
-        val registro = getItem(position)
-        holder.binding.textTituloDiario.text = registro.title
+        val diario = registro[position]
+        holder.title.text = diario.title
+
+        holder.itemView.setOnClickListener {
+            itemClick(diario)
+        }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = registro.size
 
-    inner class MyViewHolder(val binding: EstiloRecyclerviewPaginaDiarioBinding): RecyclerView.ViewHolder(binding.root){
-
-    }
 
 }
