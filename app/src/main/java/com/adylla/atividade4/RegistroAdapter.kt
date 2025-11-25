@@ -18,6 +18,7 @@ class RegistroAdapter(
     fun submitList(newList: List<RegistroDiario>){
         registroList.clear()
         registroList.addAll(newList)
+        notifyDataSetChanged()
     }
 
     inner class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
