@@ -8,7 +8,7 @@
     >
 
     <TextView
-        android:id="@+id/txtNomePaciente"
+        android:id="@+id/textNomePaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Adylla Moreira Lopes"
@@ -17,7 +17,7 @@
         />
 
     <TextView
-        android:id="@+id/txtHorario"
+        android:id="@+id/textHorario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="08:00"
