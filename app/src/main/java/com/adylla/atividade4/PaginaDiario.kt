@@ -66,18 +66,24 @@ class PaginaDiario : Fragment() {
 
     private fun initRecyclerViewRegistro(){
 
-        registroAdapter = RegistroAdapter(requireContext()) { title, id -> optionSelected(title, id)}
+        registroAdapter = RegistroAdapter{ registro ->
+            optionSelected(registro)
 
-        with(binding.recyclerViewRegistro){
+        }
+
+        binding.recyclerViewRegistro.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            setHasFixedSize(true)
             adapter = registroAdapter
+            setHasFixedSize(true)
         }
 
     }
 
     private fun optionSelected(registroDiario: RegistroDiario){
 
+        val action = PaginaDiarioDirections.actionPaginaDiarioToFragmentPaginaEscritaDiario(registroDiario)
+
+        findNavController().navigate(action)
     }
 
     private fun getRegistro() {
@@ -86,18 +92,19 @@ class PaginaDiario : Fragment() {
             .child(auth.currentUser?.uid ?: "")
             .addValueEventListener(object: ValueEventListener{
 
-                override fun onDataChange(p0: DataSnapshot) {
+                override fun onDataChange(snapshot: DataSnapshot) {
                     val registroList = mutableListOf<RegistroDiario>()
 
-                    for (ds in p0.children){
-                        val registro = ds.getValue(RegistroDiario::class.java) as RegistroDiario
-                        registroList.add(registro)
+                    for (ds in snapshot.children){
+                        val registro = ds.getValue(RegistroDiario::class.java)
+                        if (registro != null) registroList.add(registro)
                     }
                     registroAdapter.submitList(registroList)
+
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
-                    Toast.makeText(requireContext(), "Erro", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Erro ao carregar dados", Toast.LENGTH_SHORT).show()
                 }
 
             })
