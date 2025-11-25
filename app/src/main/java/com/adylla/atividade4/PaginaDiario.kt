@@ -82,7 +82,7 @@ class PaginaDiario : Fragment() {
 
     private fun optionSelected(registro: RegistroDiario){
 
-        val action = PaginaDiarioDirections.actionPaginaDiarioToFragmentPaginaEscritaDiario()
+        val action = PaginaDiarioDirections.actionPaginaDiarioToVisualizarDiario(registro)
 
         findNavController().navigate(action)
     }

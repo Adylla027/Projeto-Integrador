@@ -55,14 +55,12 @@ class LoginProfissional : Fragment() {
                 Toast.makeText(requireContext(), "Preencha com email e senha!", Toast.LENGTH_SHORT).show()
 
             }else{
-                loginUser(email,senha)
+                loginUser(email, senha)
             }
 
         }
 
     }
-
-
     private fun loginUser(email: String, senha: String){
 
         try {
@@ -77,8 +75,6 @@ class LoginProfissional : Fragment() {
                     }else{
                         Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
-
-
 
                 }
         }catch (e: Exception){

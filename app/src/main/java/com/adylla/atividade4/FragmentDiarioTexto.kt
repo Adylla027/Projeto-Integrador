@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentDiarioTextoBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -30,6 +31,7 @@ class FragmentDiarioTexto : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,6 +49,7 @@ class FragmentDiarioTexto : Fragment() {
         auth = Firebase.auth
 
         initListener()
+
 
     }
 
