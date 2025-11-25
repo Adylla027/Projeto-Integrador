@@ -11,13 +11,13 @@ import com.adylla.atividade4.databinding.EstiloRecyclerviewPaginaDiarioBinding
 
 class RegistroAdapter(
     private val itemClick: (RegistroDiario, Int) -> Unit
-): RecyclerView.Adapter<RegistroAdapter.RegistroViewHolder> (){
+): RecyclerView.Adapter<RegistroAdapter.RegistroViewHolder>(){
 
-    private val registro = mutableListOf<RegistroDiario>()
+    private val registroList = mutableListOf<RegistroDiario>()
 
     fun submitList(newList: List<RegistroDiario>){
-        registro.clear()
-        registro.addAll(newList)
+        registroList.clear()
+        registroList.addAll(newList)
     }
 
     inner class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
