@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.adylla.atividade4.databinding.EstiloRecyclerviewPaginaDiarioBinding
 
 class RegistroAdapter(
-    private val itemClick: (RegistroDiario, Int) -> Unit
+    private val itemClick: (RegistroDiario) -> Unit
 ): RecyclerView.Adapter<RegistroAdapter.RegistroViewHolder>(){
 
     private val registroList = mutableListOf<RegistroDiario>()
@@ -38,7 +38,7 @@ class RegistroAdapter(
         holder: RegistroViewHolder,
         position: Int
     ) {
-        val diario = registro[position]
+        val diario = registroList[position]
         holder.title.text = diario.title
 
         holder.itemView.setOnClickListener {
@@ -46,7 +46,7 @@ class RegistroAdapter(
         }
     }
 
-    override fun getItemCount(): Int = registro.size
+    override fun getItemCount(): Int = registroList.size
 
 
 }

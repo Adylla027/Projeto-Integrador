@@ -54,7 +54,8 @@ class PaginaDiario : Fragment() {
 
         binding.floatBtnAdicionar.setOnClickListener {
             menuAberto = !menuAberto
-            binding.linearLayoutFloatBtn.visibility = if (menuAberto) View.VISIBLE else View.GONE
+            binding.linearLayoutFloatBtn.visibility =
+                if (menuAberto) View.VISIBLE else View.GONE
         }
 
         binding.tollbarDiario.setOnClickListener{
@@ -79,9 +80,9 @@ class PaginaDiario : Fragment() {
 
     }
 
-    private fun optionSelected(registroDiario: RegistroDiario){
+    private fun optionSelected(registro: RegistroDiario){
 
-        val action = PaginaDiarioDirections.actionPaginaDiarioToFragmentPaginaEscritaDiario(registroDiario)
+        val action = PaginaDiarioDirections.actionPaginaDiarioToFragmentPaginaEscritaDiario()
 
         findNavController().navigate(action)
     }
@@ -103,7 +104,7 @@ class PaginaDiario : Fragment() {
 
                 }
 
-                override fun onCancelled(p0: DatabaseError) {
+                override fun onCancelled(error: DatabaseError) {
                     Toast.makeText(requireContext(), "Erro ao carregar dados", Toast.LENGTH_SHORT).show()
                 }
 
