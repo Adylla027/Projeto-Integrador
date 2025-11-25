@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    >
+
+    <TextView
+        android:id="@+id/txtNomePaciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adylla Moreira Lopes"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/txtHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="08:00"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_marginTop="4dp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3C3B3B"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
