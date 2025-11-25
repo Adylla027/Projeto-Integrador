@@ -4,7 +4,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#A0CDE3</color>
-    <color name="color_default">#E3FFF0</color>
+    <color name="color_default">#CCE7D7</color>
     <color name="color_details">#A0CDE3</color>
     <color name="color_background">#FAFFF2</color>
 </resources>

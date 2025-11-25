@@ -112,7 +112,11 @@
         android:id="@+id/paginaDiario"
         android:name="com.adylla.atividade4.PaginaDiario"
         android:label="fragment_pagina_diario"
-        tools:layout="@layout/fragment_pagina_diario" />
+        tools:layout="@layout/fragment_pagina_diario" >
+        <action
+            android:id="@+id/action_paginaDiario_to_fragment_pagina_escrita_diario"
+            app:destination="@id/fragment_pagina_escrita_diario" />
+    </fragment>
 
 
 
@@ -128,7 +132,14 @@
         android:id="@+id/fragment_Tela_inicial_profissional"
         android:name="com.adylla.atividade4.Fragment_Tela_inicial_profissional"
         android:label="fragment__tela_inicial_profissional"
-        tools:layout="@layout/fragment__tela_inicial_profissional" />
+        tools:layout="@layout/fragment__tela_inicial_profissional" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="senha"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentIntroducao"
         android:name="com.adylla.atividade4.introducao.FragmentIntroducao"
@@ -159,9 +170,23 @@
         android:label="fragment_intro_profissional"
         tools:layout="@layout/fragment_intro_profissional" >
         <action
-            android:id="@+id/action_fragmentIntroProfissional2_to_fragmentLogin"
-            app:destination="@id/fragmentLogin" />
+            android:id="@+id/action_fragmentIntroProfissional2_to_loginProfissional"
+            app:destination="@id/loginProfissional" />
     </fragment>
+    <fragment
+        android:id="@+id/loginProfissional"
+        android:name="com.adylla.atividade4.registros.LoginProfissional"
+        android:label="fragment_login_profissional"
+        tools:layout="@layout/fragment_login_profissional" >
+        <action
+            android:id="@+id/action_loginProfissional_to_fragment_Tela_inicial_profissional"
+            app:destination="@id/fragment_Tela_inicial_profissional" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_pagina_escrita_diario"
+        android:name="com.adylla.atividade4.FragmentDiarioTexto"
+        android:label="fragment_pagina_escrita_diario"
+        tools:layout="@layout/fragment_diario_texto" />
 
 
 </navigation>
