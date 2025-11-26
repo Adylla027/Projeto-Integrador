@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentVisualizarDiarioBinding
 import kotlin.getValue
@@ -31,6 +32,10 @@ class VisualizarDiario : Fragment() {
 
         binding.textViewTitulo.text = registro.title
         binding.textViewLerDiario.text = registro.description
+
+        binding.toolbar.setOnClickListener{
+            findNavController().navigateUp()
+        }
     }
 
 

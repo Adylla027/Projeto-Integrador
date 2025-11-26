@@ -25,6 +25,10 @@ class Fragment_Tela_inicial_profissional : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.botaofluante.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_pacientesFragment)
+
+        }
 
         binding.botaofluante2.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional)

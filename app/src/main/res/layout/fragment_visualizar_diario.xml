@@ -19,7 +19,6 @@
             android:padding="4dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:navigationIcon="@drawable/img_voltar">
 
             <ImageView
@@ -36,7 +35,10 @@
             android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <View
                 android:id="@+id/viewlinha"
@@ -55,13 +57,13 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:padding="2dp"
-                android:layout_margin="15dp"/>
+                android:layout_margin="30dp"/>
 
             <TextView
                 android:id="@+id/textViewLerDiario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Título"
+                android:hint="Anotações..."
                 android:textSize="18sp"
                 android:gravity="center"
                 android:padding="2dp"

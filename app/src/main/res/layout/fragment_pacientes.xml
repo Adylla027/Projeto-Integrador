@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PaginaDiario">
+    tools:context=".PacientesFragment">
 
     <ScrollView
         android:id="@+id/scrollViewDIARIO"
@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/tollbarDiario"
+                android:id="@+id/tollbarPacientes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/color_details"
@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:text="Meu Diário"
+                    android:text="Pacientes"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -48,60 +48,15 @@
                 android:background="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_registro"
+                android:id="@+id/recyclerView_pacientes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/estilo_recyclerview_pagina_diario"
+                tools:listitem="@layout/item_pacientes"
                 android:layout_margin="30dp"/>
 
 
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_floatBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:padding="10dp"
-        android:elevation="8dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/bg_floatbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/floatBtn_Adicionar">
-        
-        <ImageView
-            android:id="@+id/btnTexto"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:contentDescription="Criar novo diário em texto"
-            android:src="@drawable/ic_diario"/>
-
-        <ImageView
-            android:id="@+id/btnFotografia"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:contentDescription="Criar novo diário em fotografia"
-            android:src="@drawable/ic_diario"/>
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatBtn_Adicionar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="Adicionar registro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/img_add"
-        android:backgroundTint="@color/color_details"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

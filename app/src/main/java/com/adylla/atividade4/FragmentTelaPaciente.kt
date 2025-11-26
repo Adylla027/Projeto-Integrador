@@ -48,7 +48,23 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
 
         }
 
+        binding.Imagediario.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+        }
+
+        binding.textViewDiario.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+        }
+
         binding.cardViewAgenda.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+        }
+
+        binding.imageViewAgenda.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+        }
+
+        binding.textViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
         }
 

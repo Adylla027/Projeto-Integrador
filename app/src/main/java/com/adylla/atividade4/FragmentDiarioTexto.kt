@@ -48,6 +48,10 @@ class FragmentDiarioTexto : Fragment() {
         reference = Firebase.database.reference
         auth = Firebase.auth
 
+        binding.toolbar.setOnClickListener{
+            findNavController().navigateUp()
+        }
+
         initListener()
 
 

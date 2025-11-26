@@ -145,6 +145,9 @@
         <action
             android:id="@+id/action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional"
             app:destination="@id/fragment_agendamento_profissional" />
+        <action
+            android:id="@+id/action_fragment_Tela_inicial_profissional_to_pacientesFragment"
+            app:destination="@id/pacientesFragment" />
     </fragment>
 
     <fragment
@@ -213,6 +216,11 @@
         android:name="com.adylla.atividade4.fragment_agendamento_profissional"
         android:label="fragment_agendamento_profissional"
         tools:layout="@layout/fragment_agendamento_profissional"/>
+    <fragment
+        android:id="@+id/pacientesFragment"
+        android:name="com.adylla.atividade4.PacientesFragment"
+        android:label="fragment_pacientes"
+        tools:layout="@layout/fragment_pacientes" />
 
 
 </navigation>
