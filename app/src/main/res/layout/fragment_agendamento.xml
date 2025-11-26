@@ -85,8 +85,8 @@
             android:id="@+id/recyclerConsultas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_consulta"
-            android:layout_margin="30dp"/>
+            android:layout_margin="30dp"
+            tools:listitem="@layout/item_consulta" />
 
         <Button
             android:id="@+id/buttonSALVAR"

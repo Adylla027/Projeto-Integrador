@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.databinding.FragmentTelaInicialProfissionalBinding
 
 class Fragment_Tela_inicial_profissional : Fragment() {
@@ -20,6 +21,17 @@ class Fragment_Tela_inicial_profissional : Fragment() {
         _binding = FragmentTelaInicialProfissionalBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        binding.botaofluante2.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional)
+
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

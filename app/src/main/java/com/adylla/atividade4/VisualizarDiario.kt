@@ -30,6 +30,7 @@ class VisualizarDiario : Fragment() {
         val registro = args.registroDiario
 
         binding.textViewTitulo.text = registro.title
+        binding.textViewLerDiario.text = registro.description
     }
 
 

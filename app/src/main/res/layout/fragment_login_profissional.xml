@@ -29,7 +29,15 @@
             android:scaleType="centerCrop"
             android:src="@drawable/logo" />
 
-
+        <TextView
+            android:id="@+id/textViewLoginProfissional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Profissional"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/textViewLogin"
             android:layout_width="match_parent"

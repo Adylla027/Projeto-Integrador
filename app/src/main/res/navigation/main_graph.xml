@@ -142,6 +142,9 @@
         <argument
             android:name="senha"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional"
+            app:destination="@id/fragment_agendamento_profissional" />
     </fragment>
 
     <fragment
@@ -205,6 +208,11 @@
             app:argType="com.adylla.atividade4.RegistroDiario"/>
 
     </fragment>
+    <fragment
+        android:id="@+id/fragment_agendamento_profissional"
+        android:name="com.adylla.atividade4.fragment_agendamento_profissional"
+        android:label="fragment_agendamento_profissional"
+        tools:layout="@layout/fragment_agendamento_profissional"/>
 
 
 </navigation>

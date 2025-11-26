@@ -39,6 +39,9 @@ class LoginProfissional : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
+        validateData()
+        novaSenha()
+        criaCadastro()
 
     }
 
@@ -80,6 +83,27 @@ class LoginProfissional : Fragment() {
         }catch (e: Exception){
             Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
         }
+    }
+
+
+    //O usuário não tem senha
+    private fun novaSenha(){
+        binding.textviewSenha.setOnClickListener{
+            findNavController().navigate(R.id.action_fragmentLogin_to_fragmentSenha)
+        }
+    }
+
+
+    // O usuário não tem cadastro
+    private fun criaCadastro(){
+        binding.textviewCadastro.setOnClickListener{
+            findNavController().navigate(R.id.action_fragmentLogin_to_fragmentCadastro)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
