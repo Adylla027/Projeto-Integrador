@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentTelaPacienteBinding
@@ -96,9 +97,23 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        val navController = findNavController()
+
+        val options = NavOptions.Builder()
+            .setLaunchSingleTop(true)
+            .setPopUpTo(navController.graph.startDestinationId, false)
+            .build()
+
         when (item.itemId) {
-            R.id.nav_agendamento -> {openFragment(AgendamentoFragment())}
-            else -> false
+            R.id.nav_agendamento ->{
+                if (navController.currentDestination?.id != R.id.agendamentoFragment){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+                }
+            }
+            else ->{
+
+            }
 
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)

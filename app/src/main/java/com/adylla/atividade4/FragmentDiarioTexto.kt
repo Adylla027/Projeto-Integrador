@@ -52,6 +52,7 @@ class FragmentDiarioTexto : Fragment() {
             findNavController().navigateUp()
         }
 
+
         initListener()
 
 
