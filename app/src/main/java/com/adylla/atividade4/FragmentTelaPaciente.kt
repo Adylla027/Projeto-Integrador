@@ -106,12 +106,27 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
             .build()
 
         when (item.itemId) {
+
+            R.id.nav_diario ->{
+                if (navController.currentDestination?.id != R.id.paginaDiario){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+                }
+            }
+
             R.id.nav_agendamento ->{
                 if (navController.currentDestination?.id != R.id.agendamentoFragment){
                     navController.navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
                 }
             }
-            else ->{
+
+            R.id.nav_sair ->{
+                if (navController.currentDestination?.id != R.id.fragmentLogin){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentLogin)
+                }
+            }
+
+
+            else -> {
 
             }
 

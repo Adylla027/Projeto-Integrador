@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.databinding.FragmentAgendamentoBinding
 import com.adylla.atividade4.databinding.FragmentLoginBinding
 import com.google.firebase.Firebase
@@ -41,6 +42,10 @@ class AgendamentoFragment : Fragment() {
 
         //reference = Firebase.database.reference
         auth = Firebase.auth
+
+        binding.imageSetavoltar.setOnClickListener{
+            findNavController().navigateUp()
+        }
 
 
       binding.calendarview.setOnDateChangeListener {_,year, month, day ->

@@ -105,6 +105,9 @@
         <action
             android:id="@+id/action_fragmentTelaPaciente_to_agendamentoFragment"
             app:destination="@id/agendamentoFragment" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
     </fragment>
 
 
