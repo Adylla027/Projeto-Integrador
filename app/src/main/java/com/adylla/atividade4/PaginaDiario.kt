@@ -58,7 +58,7 @@ class PaginaDiario : Fragment() {
                 if (menuAberto) View.VISIBLE else View.GONE
         }
 
-        binding.tollbarDiario.setOnClickListener{
+        binding.toolbarDiario.setOnClickListener{
             findNavController().navigateUp()
         }
 

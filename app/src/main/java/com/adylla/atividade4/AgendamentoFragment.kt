@@ -43,7 +43,7 @@ class AgendamentoFragment : Fragment() {
         //reference = Firebase.database.reference
         auth = Firebase.auth
 
-        binding.imageSetavoltar.setOnClickListener{
+        binding.toolbarAgendamento.setOnClickListener{
             findNavController().navigateUp()
         }
 
