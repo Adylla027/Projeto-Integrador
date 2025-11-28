@@ -37,53 +37,6 @@ class VisualizarDiario : Fragment() {
             findNavController().navigateUp()
         }
 
-        binding.btnCompartilhar.setOnClickListener {
-            compartilharComPsicologo()
-        }
-    }
-    private fun getIdPaciente(): String{
-        return FirebaseAuth.getInstance().currentUser?.uid ?: ""
-    }
-
-    private fun getIdPsicologo(): String{
-        return args.psicologoId
-    }
-
-    private fun compartilharComPsicologo(){
-        val diario = args.registroDiario
-        val pacienteId = getIdPaciente()
-        val psicologoId = getIdPsicologo()
-
-        val compartilhamentoId = "$pacienteId-$psicologoId"
-
-        val db = FirebaseAuth.getInstance().getReference("compartilhamentos")
-        db.child(compartilhamentoId).get().addOnSuccessListener{ snap ->
-
-            if (snap.exists()){
-
-                val compartilhamento = snap.getValue(Compartilhar::class.java)
-                val novaLista = compartilhamento!!.idDiariosCompartilhados + diario.id
-
-                db.child(compartilhamentoId)
-                    .child("idDiariosCompartilhados")
-                    .setValue(novaLista)
-
-            }else{
-
-                val novoCompartilhamento = Compartilhar(
-                    compartilhamentoId = compartilhamentoId,
-                    idPaciente = pacienteId,
-                    idPsicologo = psicologoId,
-                    idDiariosCompartilhados = listOf(diario.id)
-                )
-                db.child(compartilhamentoId).setValue(novoCompartilhamento)
-            }
-
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 
 }
