@@ -1,12 +1,16 @@
 package com.adylla.atividade4
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentDiarioTextoBinding
@@ -56,12 +60,16 @@ class FragmentDiarioTexto : Fragment() {
         initListener()
 
 
+
+
     }
 
     private fun initListener(){
         binding.btnSalvar.setOnClickListener {
             validateData()
         }
+
+
     }
 
     private fun validateData(){
@@ -86,6 +94,7 @@ class FragmentDiarioTexto : Fragment() {
             .child(registroDiario.id)
             .setValue(registroDiario).addOnCompleteListener { result ->
                 if (result.isSuccessful){
+
                     Toast.makeText(requireContext(), "Sucesso", Toast.LENGTH_SHORT).show()
                     if (novoRegistroDiario){
                         findNavController().popBackStack()
@@ -99,10 +108,18 @@ class FragmentDiarioTexto : Fragment() {
             }
     }
 
+
+
+
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
 
-    }
+
+}
+
+
