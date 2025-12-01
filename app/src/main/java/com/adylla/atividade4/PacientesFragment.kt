@@ -46,5 +46,11 @@ class PacientesFragment : Fragment() {
         }
     }
 
+    /*private fun optionSelected(){
+
+        val action = PaginaDiarioDirections.actionPaginaDiarioToVisualizarDiario(passar parâmetros)
+        findNavController().navigate(action)
+    }*/
+
 
 }
