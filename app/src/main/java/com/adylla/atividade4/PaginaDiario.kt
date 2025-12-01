@@ -84,14 +84,6 @@ class PaginaDiario : Fragment() {
         val action = PaginaDiarioDirections.actionPaginaDiarioToVisualizarDiario(registro)
         findNavController().navigate(action)
 
-        val pacienteId = auth.currentUser?.uid ?: return
-        buscarIdPsicologo(pacienteId){ profissionalId ->
-            if (!profissionalId.isNullOrEmpty()){
-                compartilharComPsicologo(registro, profissionalId, pacienteId)
-            }else{
-                Toast.makeText(requireContext(), "Psicólogo não encontrado", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     private fun getRegistro() {
@@ -121,59 +113,6 @@ class PaginaDiario : Fragment() {
         binding.btnTexto.setOnClickListener {
             findNavController().navigate(R.id.action_paginaDiario_to_fragment_pagina_escrita_diario)
         }
-    }
-
-    private fun buscarIdPsicologo(
-        pacienteId: String,
-        callback: (String?) -> Unit
-    ){
-        reference
-            .child("usuários")
-            .child(pacienteId)
-            .child("profissionalId")
-            .addListenerForSingleValueEvent(object : ValueEventListener{
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val profissionalId = snapshot.getValue(String::class.java)
-                    callback(profissionalId)
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    callback(null)
-                }
-
-            })
-
-    }
-    private fun compartilharComPsicologo(
-        registro: RegistroDiario,
-        profissionalId: String,
-        pacienteId: String
-    ) {
-
-        val reference = Firebase.database.reference
-
-        val compartilhamento = Compartilhamento(
-            registroId = registro.id,
-            pacienteId = pacienteId,
-            titulo = registro.title
-        )
-
-        reference
-            .child("compartilhamentos")
-            .child(profissionalId)
-            .child(registro.id)
-            .setValue(compartilhamento)
-            .addOnCompleteListener { envio->
-                if (envio.isSuccessful){
-                    Toast.makeText(requireContext(), "Enviado ao psicólogo!", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(requireContext(), "Erro ao compartilhar", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-
-
     }
 
     override fun onDestroyView() {

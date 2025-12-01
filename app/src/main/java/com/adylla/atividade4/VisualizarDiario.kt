@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.adylla.atividade4.databinding.FragmentVisualizarDiarioBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.database
 import kotlin.getValue
 
@@ -42,45 +43,58 @@ class VisualizarDiario : Fragment() {
             findNavController().navigateUp()
         }
 
-        binding.btnCompartilhar.setOnClickListener {
-            //DialogCompartilhar().show(parentFragmentManager, "DialogCompartilhar")
-        }
+        compartilharComPsicologo()
 
-        setFragmentResultListener("compartilharRequest"){_,bundle ->
-            val confirmado = bundle.getBoolean("Confirme")
-            if(confirmado){
-                CompartilharProfissional()
-            }
-        }
 
     }
 
-    private fun CompartilharProfissional(){
-        val auth = FirebaseAuth.getInstance()
+    private fun buscarIdPsicologo(
+        pacienteId: String,
+        callback: (String?) -> Unit
+    ){
+        FirebaseDatabase.getInstance().reference
+            .child("usuarios")
+            .child(pacienteId)
+            .child("psicologoId")
+            .get()
+            .addOnSuccessListener {callback(it.getValue(String::class.java))  }
+            .addOnFailureListener {callback(null) }
 
-        val userId = auth.currentUser?.uid?: return
+    }
+
+    private fun compartilharComPsicologo(){
+
+        val pacienteId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val registro = args.registroDiario
 
-        val dados = mapOf(
-            "id" to registro.id,
-            "title" to registro.title,
-            "description" to registro.description
-        )
+        buscarIdPsicologo(pacienteId){ psicologoId ->
 
-        Firebase.database.reference
-            .child("compartilharProfissinal")
-            .child(userId)
-            .child(registro.id)
-            .setValue(dados)
-            .addOnCompleteListener {
-                if (it.isSuccessful){
-                    Toast.makeText(requireContext(), "Compartilhado com o Psicólogo", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(requireContext(), "Erro ao Compartilhar", Toast.LENGTH_SHORT).show()
-                }
+            if (psicologoId == null){
+                Toast.makeText(requireContext(), "Nenhum psicólogo vinculado", Toast.LENGTH_SHORT).show()
 
+            }else{
+                val ref = FirebaseDatabase.getInstance().reference
+                    .child("compartilhamentos")
+                    .child(psicologoId)
+                    .child(pacienteId)
+                    .child(registro.id)
+
+                ref.setValue(registro)
+                    .addOnSuccessListener{
+                        Toast.makeText(requireContext(), "Compartilhado com sucesso", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener{
+                        Toast.makeText(requireContext(), "Erro ao compartilhar", Toast.LENGTH_SHORT).show()
+                    }
             }
+
+        }
+
+
+
+
     }
+
 
 }
 
