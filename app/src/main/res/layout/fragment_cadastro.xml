@@ -82,19 +82,30 @@
             android:gravity="center">
 
             <RadioButton
+                android:id="@+id/rbPaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Paciente"
-                android:checked="true"
                 android:layout_margin="10dp"/>
 
             <RadioButton
+                android:id="@+id/rbPsicologo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profissional"
                 android:layout_margin="10dp"/>
 
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText_CRP"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Insira seu CRP"
+            android:padding="10dp"
+            android:visibility="gone"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttnCadastro"

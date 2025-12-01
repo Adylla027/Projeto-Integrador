@@ -8,6 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.adylla.atividade4.databinding.EstiloRecyclerviewPaginaDiarioBinding
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
 
 class RegistroAdapter(
     private val itemClick: (RegistroDiario) -> Unit
@@ -45,6 +48,7 @@ class RegistroAdapter(
         holder.itemView.setOnClickListener {
             itemClick(diario)
         }
+
     }
 
     override fun getItemCount(): Int = registroList.size

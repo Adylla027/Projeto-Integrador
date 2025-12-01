@@ -5,12 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.adylla.atividade4.databinding.FragmentPacientesBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
 
 
 class PacientesFragment : Fragment() {
 
-    private var _binding:
+    private var _binding: FragmentPacientesBinding? = null
 
+    private val binding get() = _binding!!
+
+    private lateinit var reference: DatabaseReference
+
+    private lateinit var auth: FirebaseAuth
 
 
 
@@ -18,9 +30,21 @@ class PacientesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pacientes, container, false)
+        _binding = FragmentPacientesBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        reference = Firebase.database.reference
+        auth = Firebase.auth
+
+        binding.toolbarPacientes.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
 
-    }
+}

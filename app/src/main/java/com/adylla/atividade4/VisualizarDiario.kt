@@ -43,7 +43,7 @@ class VisualizarDiario : Fragment() {
         }
 
         binding.btnCompartilhar.setOnClickListener {
-            DialogCompartilhar().show(parentFragmentManager, "DialogCompartilhar")
+            //DialogCompartilhar().show(parentFragmentManager, "DialogCompartilhar")
         }
 
         setFragmentResultListener("compartilharRequest"){_,bundle ->

@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.R
+import com.adylla.atividade4.Usuario
 import com.adylla.atividade4.databinding.FragmentCadastroBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class FragmentCadastro : Fragment() {
     private var _binding: FragmentCadastroBinding? = null
@@ -30,9 +32,26 @@ class FragmentCadastro : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setaVoltar()
 
+        setaVoltar()
+        crpVisibilidade()
         validateData()
+    }
+
+    private fun crpVisibilidade(){
+        binding.rbPsicologo.setOnCheckedChangeListener { _,  isChecked ->
+            if (isChecked){
+                binding.editTextCRP.visibility = View.VISIBLE
+            }
+        }
+
+        binding.rbPaciente.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked){
+                binding.editTextCRP.visibility = View.GONE
+                binding.editTextCRP.text.clear()
+            }
+        }
+
     }
 
     private fun validateData(){
@@ -41,34 +60,73 @@ class FragmentCadastro : Fragment() {
             val email = binding.EdittextEMAIL.text.toString().trim()
             val senha = binding.EdittextSENHA.text.toString().trim()
 
-            //Validação do email e senha.
+
             if (email.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
                     .show()
-            } else {
+
+            }else {
                 registerUser(email, senha)
             }
         }
     }
 
-    private fun registerUser(email: String, senha: String ){
-        try {
-            val auth = FirebaseAuth.getInstance()
-            auth.createUserWithEmailAndPassword(email, senha)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful){
-                        //mensagem de sucesso
-                        Toast.makeText(requireContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                    }else{
-                        //mensagem de erro
-                        Toast.makeText(requireContext(), "Erro ao cadasrar", Toast.LENGTH_SHORT).show()
+    private fun registerUser(email: String, senha: String) {
+        val auth = FirebaseAuth.getInstance()
+
+        auth.createUserWithEmailAndPassword(email, senha)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
+                    val uid = auth.currentUser!!.uid
+
+                    val tipoUsuario = when {
+                        binding.rbPaciente.isChecked -> "pacientes"
+                        binding.rbPsicologo.isChecked -> "profissionais"
+                        else -> "pacientes"
                     }
 
+                    val crp = if (binding.rbPsicologo.isChecked) binding.editTextCRP.text.toString().trim() else ""
+
+                    val dataCadastro = java.text.SimpleDateFormat(
+                        "dd/MM/yyyy",
+                        java.util.Locale.getDefault()
+                    ).format(java.util.Date())
+
+                    val usuario = Usuario(
+                        uid = uid,
+                        email = email,
+                        tipo = tipoUsuario,
+                        nome = "",
+                        dataNasc = "",
+                        telefone = "",
+                        dataCads = dataCadastro,
+                        crp = crp,
+                        profissionalId = ""
+                    )
+
+                    val dbRef = FirebaseDatabase.getInstance().reference
+                    dbRef.child(tipoUsuario)
+                        .child(uid)
+                        .setValue(usuario)
+                        .addOnCompleteListener { saveTask ->
+                            if (saveTask.isSuccessful) {
+                                Toast.makeText(requireContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(requireContext(), "Erro ao salvar dados: ${saveTask.exception?.message}", Toast.LENGTH_LONG).show()
+                            }
+                        }
+
+                } else {
+                    Toast.makeText(requireContext(), "Erro ao cadastrar: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
-        }catch (e : Exception){
-            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
-        }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(requireContext(), "Falha no cadastro: ${e.message}", Toast.LENGTH_LONG).show()
+            }
     }
+
+
 
     private fun setaVoltar(){
         binding.toolbarCadastro.setOnClickListener{
