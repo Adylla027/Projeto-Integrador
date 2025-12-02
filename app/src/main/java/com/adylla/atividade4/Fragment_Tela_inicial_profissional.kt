@@ -30,10 +30,10 @@ class Fragment_Tela_inicial_profissional : Fragment() {
 
         }
 
-        binding.botaofluante2.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional)
+        //binding.botaofluante2.setOnClickListener {
+            //findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_visualizarAgendamento)
 
-        }
+        //}
     }
 
 

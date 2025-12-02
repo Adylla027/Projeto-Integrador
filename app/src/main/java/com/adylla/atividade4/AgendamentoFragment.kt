@@ -53,40 +53,8 @@ class AgendamentoFragment : Fragment() {
           val mes = String.format("%02d",month+1)
           val data = "$dia-$mes-$year"
 
-        buscarConsultasDia(data)
       }
 
-    }
-
-    private fun buscarConsultasDia(data: String){
-
-        val db = FirebaseDatabase.getInstance().reference
-        val lista = mutableListOf<Consulta>()
-
-        db.child("Consultas")
-            .orderByChild("data")
-            .equalTo(data)
-            .addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot){
-                    lista.clear()
-
-                    if(snapshot.exists()){
-                        for (consultaSnap in snapshot.children){
-                            val consulta = consultaSnap.getValue(Consulta::class.java)
-                            consulta?.let { lista.add(it) }
-                        }
-
-                    }
-
-                    binding.recyclerConsultas.adapter = ConsultaAdapter(lista)
-                }
-
-                override fun onCancelled(error: DatabaseError){
-                    Toast.makeText(requireContext(), "Erro ao buscar dados", Toast.LENGTH_SHORT).show()
-                }
-
-
-            })
     }
 
 

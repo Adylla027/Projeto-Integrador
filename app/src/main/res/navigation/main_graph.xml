@@ -103,11 +103,11 @@
             android:id="@+id/action_fragmentTelaPaciente_to_paginaDiario"
             app:destination="@id/paginaDiario" />
         <action
-            android:id="@+id/action_fragmentTelaPaciente_to_agendamentoFragment"
-            app:destination="@id/agendamentoFragment" />
-        <action
             android:id="@+id/action_fragmentTelaPaciente_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_visualizarAgendamento"
+            app:destination="@id/visualizarAgendamento" />
     </fragment>
 
 
@@ -125,15 +125,6 @@
     </fragment>
 
 
-
-    <fragment
-        android:id="@+id/agendamentoFragment"
-        android:name="com.adylla.atividade4.AgendamentoFragment"
-        android:label="fragment_agendamento"
-        tools:layout="@layout/fragment_agendamento" />
-
-
-
     <fragment
         android:id="@+id/fragment_Tela_inicial_profissional"
         android:name="com.adylla.atividade4.Fragment_Tela_inicial_profissional"
@@ -145,9 +136,6 @@
         <argument
             android:name="senha"
             app:argType="string" />
-        <action
-            android:id="@+id/action_fragment_Tela_inicial_profissional_to_fragment_agendamento_profissional"
-            app:destination="@id/fragment_agendamento_profissional" />
         <action
             android:id="@+id/action_fragment_Tela_inicial_profissional_to_pacientesFragment"
             app:destination="@id/pacientesFragment" />
@@ -224,6 +212,11 @@
         android:name="com.adylla.atividade4.PacientesFragment"
         android:label="fragment_pacientes"
         tools:layout="@layout/fragment_pacientes" />
+    <fragment
+        android:id="@+id/visualizarAgendamento"
+        android:name="com.adylla.atividade4.VisualizarAgendamento"
+        android:label="fragment_visualizar_agendamento"
+        tools:layout="@layout/fragment_visualizar_agendamento" />
 
 
 </navigation>

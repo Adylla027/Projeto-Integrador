@@ -1,40 +1,56 @@
 package com.adylla.atividade4
 
 import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.TextView
 import android.view.View
-
+import android.view.ViewGroup
+import android.widget.ListAdapter
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.adylla.atividade4.databinding.ItemConsultaBinding
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
 
 class ConsultaAdapter(
-    private val listaConsultas: List<Consulta>
-): RecyclerView.Adapter<ConsultaAdapter.ConsultaViewHolder>(){
 
+    private val itemClick: (Consulta) -> Unit = {}
+) : RecyclerView.Adapter<ConsultaAdapter.ConsultaViewHolder>() {
 
-    // ViewHolder — controla cada item da lista
-    class  ConsultaViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
-        val textNomePaciente: TextView = itemView.findViewById(R.id.textNomePaciente)
-        val textHorario: TextView = itemView.findViewById(R.id.textHorario)
+    private val agendaList = mutableListOf<Consulta>()
 
+    fun submitList(newList: List<Consulta>) {
+        agendaList.clear()
+        agendaList.addAll(newList)
+        notifyDataSetChanged()
     }
-    // Cria o modelo visual (inflar o item_consulta)
+
+    inner class ConsultaViewHolder(val binding: ItemConsultaBinding)
+        : RecyclerView.ViewHolder(binding.root)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConsultaViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_consulta,parent,false)
-
-        return ConsultaViewHolder(view)
+        val binding = ItemConsultaBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ConsultaViewHolder(binding)
     }
 
-    // Preenche cada item com os dados
     override fun onBindViewHolder(holder: ConsultaViewHolder, position: Int) {
-        val consulta = listaConsultas[position]
+        val consulta = agendaList[position]
 
-        holder.textNomePaciente.text = consulta.nomePaciente?: "Paciente Desconhecido"
-        holder.textHorario.text = consulta.horario?: "--:--"
+        holder.binding.textNomePaciente.text = consulta.nomePaciente ?: ""
+        holder.binding.textViewProfissional.text = consulta.profissional ?: ""
+        holder.binding.textViewData.text = consulta.data ?: ""
+        holder.binding.textViewHorario.text = consulta.horario ?: ""
+        holder.binding.textViewLocal.text = consulta.local ?: ""
+
+        holder.binding.root.setOnClickListener {
+            itemClick(consulta)
+        }
     }
 
-    override fun getItemCount(): Int = listaConsultas.size
+    override fun getItemCount(): Int = agendaList.size
 
 }
-

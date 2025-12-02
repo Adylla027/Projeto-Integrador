@@ -16,6 +16,7 @@ import com.adylla.atividade4.databinding.FragmentTelaPacienteBinding
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.navigation.NavigationView
+import kotlin.getValue
 
 
 class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelectedListener {
@@ -58,15 +59,15 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
         }
 
         binding.cardViewAgenda.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
         }
 
         binding.imageViewAgenda.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
         }
 
         binding.textViewAgenda.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+            findNavController().navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
         }
 
     }
@@ -114,8 +115,8 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
             }
 
             R.id.nav_agendamento ->{
-                if (navController.currentDestination?.id != R.id.agendamentoFragment){
-                    navController.navigate(R.id.action_fragmentTelaPaciente_to_agendamentoFragment)
+                if (navController.currentDestination?.id != R.id.visualizarAgendamento){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
                 }
             }
 
@@ -141,7 +142,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
             .addToBackStack(null)
             .commitAllowingStateLoss()
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
