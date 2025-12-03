@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,12 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bem-Vindo ao nosso app!"
-            android:textSize="32dp"
+            android:textSize="30sp"
             android:textAlignment="center"
-            android:padding="4dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_margin="30dp"
             android:textColor="#38C5C5"/>
 
         <ImageView
@@ -30,22 +26,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/img_introducao"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginBottom="10dp"/>
-
-
+            android:layout_margin="25dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Um espaço dedicado ao cuidado emocional com acolhimento e praticidade"
-            android:padding="4dp"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"/>
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPaciente"

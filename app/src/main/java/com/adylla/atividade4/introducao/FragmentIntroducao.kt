@@ -23,26 +23,26 @@ class FragmentIntroducao : Fragment() {
         return binding.root
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navegacoes()
+
+    }
+    private fun navegacoes(){
+
         binding.btnPaciente.setOnClickListener {
-            val action = FragmentIntroducaoDirections
-                .actionFragmentIntroducaoToFragmentIntroPaciente()
+            val action = FragmentIntroducaoDirections.actionFragmentIntroducaoToFragmentIntroPaciente()
             findNavController().navigate(action)
         }
 
         binding.btnProfissional.setOnClickListener {
-
             val action = FragmentIntroducaoDirections.actionFragmentIntroducaoToFragmentIntroProfissional2()
             findNavController().navigate(action)
 
         }
 
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -126,15 +126,11 @@ class FragmentCadastro : Fragment() {
             }
     }
 
-
-
     private fun setaVoltar(){
         binding.toolbarCadastro.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
         }
     }
-
-
 
 
     override fun onDestroyView() {

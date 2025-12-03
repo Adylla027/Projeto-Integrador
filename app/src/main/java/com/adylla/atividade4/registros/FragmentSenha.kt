@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 class FragmentSenha : Fragment() {
     private var _binding: FragmentSenhaBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var auth: FirebaseAuth
 
 
@@ -32,42 +31,21 @@ class FragmentSenha : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setaVoltar()
 
         auth = FirebaseAuth.getInstance()
 
         initListener()
 
-
-        binding.buttnFINALIZAR.setOnClickListener{
-
-            val email = binding.EdittextEMAIL.text.toString().trim()
-            val senha = binding.EdittextSENHA.text.toString().trim()
-
-            if (email.isEmpty() || senha.isEmpty() ) {
-                Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
-            }  else {
-                val action = FragmentSenhaDirections.actionFragmentSenhaToFragmentLogin(email, senha)
-                findNavController().navigate(action)
-            }
+        binding.toolbarRedefinirSenha.setOnClickListener {
+            findNavController().navigateUp()
         }
 
     }
-
-
-
-    private fun setaVoltar(){
-        binding.toolbarCadastro.setOnClickListener{
-            findNavController().navigate(R.id.action_fragmentSenha_to_fragmentLogin)
-        }
-    }
-
     private fun initListener() {
         binding.buttnFINALIZAR.setOnClickListener {
             validateData()
         }
     }
-
     private fun validateData() {
         val email = binding.EdittextEMAIL.text.toString().trim()
 
@@ -81,14 +59,11 @@ class FragmentSenha : Fragment() {
     private fun recoverAccountUser(email: String) {
         try {
             auth.sendPasswordResetEmail( email)
-                .addOnCompleteListener { recuperacao ->
-                    if (recuperacao.isSuccessful) {
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
                         Toast.makeText(requireContext(), "Senha recuperada", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(requireContext(),
-                             recuperacao.exception?.message,
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }
         } catch (e: Exception) {
