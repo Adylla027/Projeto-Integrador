@@ -26,6 +26,8 @@ class RegistroAdapter(
 
     inner class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val title = itemView.findViewById<TextView>(R.id.textTitulo_diario)
+        val data = itemView.findViewById<TextView>(R.id.textView_data)
+        val hora = itemView.findViewById<TextView>(R.id.textView_hora)
     }
 
 
@@ -48,6 +50,10 @@ class RegistroAdapter(
         holder.itemView.setOnClickListener {
             itemClick(diario)
         }
+
+        val instant =
+
+
 
     }
 

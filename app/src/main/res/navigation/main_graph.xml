@@ -104,7 +104,7 @@
             app:destination="@id/paginaDiario" />
         <action
             android:id="@+id/action_fragmentTelaPaciente_to_fragmentLogin"
-            app:destination="@id/fragmentLogin" />
+            app:destination="@id/fragmentLogin"/>
         <action
             android:id="@+id/action_fragmentTelaPaciente_to_visualizarAgendamento"
             app:destination="@id/visualizarAgendamento" />

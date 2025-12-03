@@ -40,11 +40,70 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         getExtra()
         setupImageSlider()
-
         initListenerMenu()
+        botoes()
 
+    }
+    private fun initListenerMenu(){
+        toggle = ActionBarDrawerToggle(requireActivity(),binding.drawerLayout,binding.toolbar,R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        binding.naview.setNavigationItemSelectedListener(this)
+        binding.toolbar.setNavigationIcon(R.drawable.ic_menu)
+    }
+    private fun getExtra(){
+        val email = args.email
+        val senha = args.senha
+        Toast.makeText(requireContext(),"Email: $email, Senha: $senha",Toast.LENGTH_SHORT).show()
+    }
+    private fun setupImageSlider() {
+
+        val imageList = ArrayList<SlideModel>()
+
+        imageList.add(SlideModel(R.drawable.imagem4_carrossel))
+        imageList.add(SlideModel(R.drawable.imagem_carrossel))
+        imageList.add(SlideModel(R.drawable.imagem3_carrossel))
+
+        binding.sliderImage.setImageList(imageList, ScaleTypes.FIT)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        val navController = findNavController()
+
+        when (item.itemId) {
+
+            R.id.nav_diario ->{
+                if (navController.currentDestination?.id != R.id.paginaDiario){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+                }
+            }
+
+            R.id.nav_agendamento ->{
+                if (navController.currentDestination?.id != R.id.visualizarAgendamento){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
+                }
+            }
+
+            R.id.nav_sair ->{
+                if (navController.currentDestination?.id != R.id.fragmentLogin){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentLogin)
+                }
+            }
+
+            else -> {
+
+            }
+
+        }
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun botoes(){
         binding.cardViewDiario.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
 
@@ -69,78 +128,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
         binding.textViewAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
         }
-
-    }
-
-    private fun initListenerMenu(){
-        toggle = ActionBarDrawerToggle(requireActivity(),binding.drawerLayout,binding.toolbar,R.string.open, R.string.close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        binding.naview.setNavigationItemSelectedListener(this)
-        binding.toolbar.setNavigationIcon(R.drawable.ic_menu)
-
-    }
-    private fun getExtra(){
-        val email = args.email
-        val senha = args.senha
-        Toast.makeText(requireContext(),"Email: $email, Senha: $senha",Toast.LENGTH_SHORT).show()
-    }
-
-    private fun setupImageSlider() {
-
-        val imageList = ArrayList<SlideModel>()
-
-        imageList.add(SlideModel(R.drawable.imagem_final_tela_profissional, "Diário"))
-        //imageList.add(SlideModel(R.drawable.logo, "Logo"))
-
-        binding.sliderImage.setImageList(imageList, ScaleTypes.FIT)
-
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
-        val navController = findNavController()
-
-        val options = NavOptions.Builder()
-            .setLaunchSingleTop(true)
-            .setPopUpTo(navController.graph.startDestinationId, false)
-            .build()
-
-        when (item.itemId) {
-
-            R.id.nav_diario ->{
-                if (navController.currentDestination?.id != R.id.paginaDiario){
-                    navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
-                }
-            }
-
-            R.id.nav_agendamento ->{
-                if (navController.currentDestination?.id != R.id.visualizarAgendamento){
-                    navController.navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
-                }
-            }
-
-            R.id.nav_sair ->{
-                if (navController.currentDestination?.id != R.id.fragmentLogin){
-                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentLogin)
-                }
-            }
-
-
-            else -> {
-
-            }
-
-        }
-        binding.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-    private fun openFragment(fragment: Fragment) {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.container, fragment)
-            .addToBackStack(null)
-            .commitAllowingStateLoss()
     }
 
     override fun onDestroyView() {

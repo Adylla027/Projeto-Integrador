@@ -25,11 +25,21 @@ class FragmentIntroProfissional : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navegacao()
+    }
+
+    private fun navegacao(){
+
         binding.buttonProximo.setOnClickListener {
 
             val action = FragmentIntroProfissionalDirections
                 .actionFragmentIntroProfissional2ToLoginProfissional()
-                findNavController().navigate(action)
+            findNavController().navigate(action)
+
+        }
+
+        binding.toolbar.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 

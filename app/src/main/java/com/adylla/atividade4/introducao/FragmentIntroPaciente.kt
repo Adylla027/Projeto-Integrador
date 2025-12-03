@@ -25,12 +25,20 @@ class FragmentIntroPaciente : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+       navegacao()
+
+    }
+    private fun navegacao(){
+
         binding.buttonProximo.setOnClickListener {
             val action = FragmentIntroPacienteDirections
                 .actionFragmentIntroPacienteToFragmentLogin()
             findNavController().navigate(action)
         }
 
+        binding.toolbar.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onDestroyView() {

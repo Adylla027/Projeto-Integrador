@@ -15,8 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class FragmentSplash : Fragment() {
     private var _binding: FragmentSplashBinding? = null
-    // This property is only valid between onCreateView and
-// onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
@@ -37,14 +35,12 @@ class FragmentSplash : Fragment() {
         // Navega automaticamente para a tela de login após 5 segundos
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.action_fragmentTelaInicial_to_fragmentIntroducao)
-        }, 5000)
+        }, 3000)
 
         auth = FirebaseAuth.getInstance()
 
     }
-
-    /*
-    private fun checkAuth(){
+    /*private fun checkAuth(){
         try {
             val currentUser = auth.currentUser
 
