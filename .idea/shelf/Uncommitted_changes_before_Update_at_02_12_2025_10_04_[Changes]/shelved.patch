@@ -1,0 +1,18 @@
+Index: app/src/main/java/com/adylla/atividade4/PacientesFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.adylla.atividade4\r\n\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\n\r\n\r\nclass PacientesFragment : Fragment() {\r\n\r\n    private var _binding:\r\n\r\n\r\n\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater, container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_pacientes, container, false)\r\n    }\r\n\r\n\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/adylla/atividade4/PacientesFragment.kt b/app/src/main/java/com/adylla/atividade4/PacientesFragment.kt
+--- a/app/src/main/java/com/adylla/atividade4/PacientesFragment.kt	(revision 49b469380a130da99c97ef8e646fe9a85dce76a0)
++++ b/app/src/main/java/com/adylla/atividade4/PacientesFragment.kt	(date 1764583751961)
+@@ -9,7 +9,6 @@
+ 
+ class PacientesFragment : Fragment() {
+ 
+-    private var _binding:
+ 
+ 
+ 
