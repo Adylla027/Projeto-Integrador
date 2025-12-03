@@ -25,16 +25,17 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:id="@+id/cardVIew_imagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="5dp"
+                android:backgroundTint="@color/color_default">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_diario"/>
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/diario_pagina"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -59,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:hint="Data"
+                        android:hint="@string/card_data"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 

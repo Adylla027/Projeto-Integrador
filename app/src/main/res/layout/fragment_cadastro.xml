@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20sp"
-            android:text="Cadastre-se"
+            android:text="@string/cadastro"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25dp"
@@ -51,7 +51,7 @@
             android:layout_height="48dp"
             android:layout_margin="15dp"
             android:background="@drawable/bg_edit_text"
-            android:hint="Insira seu email"
+            android:hint="@string/email_cadastro"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 
@@ -61,7 +61,7 @@
             android:layout_height="48dp"
             android:layout_margin="15dp"
             android:background="@drawable/bg_edit_text"
-            android:hint="Digite sua senha"
+            android:hint="@string/senha_cadastro"
             android:inputType="textPassword"
             android:padding="10dp" />
 
@@ -71,7 +71,7 @@
             android:layout_height="48dp"
             android:layout_margin="15dp"
             android:background="@drawable/bg_edit_text"
-            android:hint="Confirme sua senha"
+            android:hint="@string/confirma_cadastro"
             android:inputType="textPassword"
             android:padding="10dp" />
 
@@ -85,14 +85,14 @@
                 android:id="@+id/rbPaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Paciente"
+                android:text="@string/rb_paciente"
                 android:layout_margin="10dp"/>
 
             <RadioButton
                 android:id="@+id/rbPsicologo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profissional"
+                android:text="@string/rb_profissional"
                 android:layout_margin="10dp"/>
 
         </RadioGroup>
@@ -115,7 +115,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/bg_btn"
-            android:text="Finalizar"
+            android:text="@string/botao_cadastro"
             android:textSize="20dp"
             app:backgroundTint="@null" />
 
@@ -126,7 +126,7 @@
             android:layout_marginTop="45dp"
             android:layout_marginEnd="20dp"
             android:padding="5dp"
-            android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+            android:text="@string/msg_cadastro"
             android:textAlignment="center"
             android:textSize="12sp" />
 

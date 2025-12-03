@@ -32,7 +32,7 @@ class FragmentSplash : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Navega automaticamente para a tela de login após 5 segundos
+        // Navega automaticamente para a tela de login após 3 segundos
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.action_fragmentTelaInicial_to_fragmentIntroducao)
         }, 3000)
@@ -40,20 +40,6 @@ class FragmentSplash : Fragment() {
         auth = FirebaseAuth.getInstance()
 
     }
-    /*private fun checkAuth(){
-        try {
-            val currentUser = auth.currentUser
-
-            if(currentUser != null){
-                findNavController().navigate(R.id.action_fragmentTelaInicial_to_fragmentTelaPaciente)
-            }else{
-                findNavController().navigate(R.id.action_fragmentLogin_to_fragmentCadastro)
-            }
-        }catch (e: Exception){
-            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_fragmentLogin_to_fragmentCadastro)
-        }
-    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -17,8 +17,6 @@ class FragmentCadastro : Fragment() {
     private var _binding: FragmentCadastroBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var auth: FirebaseAuth
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,6 +36,7 @@ class FragmentCadastro : Fragment() {
         validateData()
     }
 
+  //função que torna visível ou não campo para preencher crp de acordo com o tipo de usuário
     private fun crpVisibilidade(){
         binding.rbPsicologo.setOnCheckedChangeListener { _,  isChecked ->
             if (isChecked){
@@ -62,7 +61,7 @@ class FragmentCadastro : Fragment() {
 
 
             if (email.isEmpty() || senha.isEmpty()) {
-                Toast.makeText(requireContext(), "Preencha o email e a senha!", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), R.string.msg_empty, Toast.LENGTH_SHORT)
                     .show()
 
             }else {
@@ -88,11 +87,13 @@ class FragmentCadastro : Fragment() {
 
                     val crp = if (binding.rbPsicologo.isChecked) binding.editTextCRP.text.toString().trim() else ""
 
+                    //Captura data atual e registra no banco junto com os outros dados
                     val dataCadastro = java.text.SimpleDateFormat(
                         "dd/MM/yyyy",
                         java.util.Locale.getDefault()
                     ).format(java.util.Date())
 
+                    //variavel que irá capturar atrvés de dataclass os dados necessários para registro no banco de dados
                     val usuario = Usuario(
                         uid = uid,
                         email = email,
@@ -111,18 +112,18 @@ class FragmentCadastro : Fragment() {
                         .setValue(usuario)
                         .addOnCompleteListener { saveTask ->
                             if (saveTask.isSuccessful) {
-                                Toast.makeText(requireContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(requireContext(), R.string.msg_sucesso_cadastro, Toast.LENGTH_SHORT).show()
                             } else {
-                                Toast.makeText(requireContext(), "Erro ao salvar dados: ${saveTask.exception?.message}", Toast.LENGTH_LONG).show()
+                                Toast.makeText(requireContext(), R.string.msg_erros_salvar_dados, Toast.LENGTH_LONG).show()
                             }
                         }
 
                 } else {
-                    Toast.makeText(requireContext(), "Erro ao cadastrar: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), R.string.msg_erro_cadastro, Toast.LENGTH_LONG).show()
                 }
             }
             .addOnFailureListener { e ->
-                Toast.makeText(requireContext(), "Falha no cadastro: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), R.string.msg_falha_cadastro, Toast.LENGTH_LONG).show()
             }
     }
 

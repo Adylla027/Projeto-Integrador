@@ -26,15 +26,8 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_dr_piu"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dra. Maria Souza"
-                android:layout_marginStart="25dp"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_marginStart="250dp"
+                android:src="@drawable/logo_icone2"/>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -83,7 +76,7 @@
                             android:id="@+id/textview1"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:text="Próxima consulta"
+                            android:text="@string/car_profissional"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:gravity="center_vertical"
@@ -95,7 +88,7 @@
                             android:id="@+id/textview2"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:text="Ashley Gabriela"
+                            android:text="@string/nome_de_um_paciente"
                             android:textColor="@color/black"
                             android:gravity="center_vertical"
                             android:paddingStart="16dp"
@@ -106,7 +99,7 @@
                             android:id="@+id/textview3"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:text="8:00 • consulta presencial"
+                            android:text="@string/horario_consulta"
                             android:fontFamily="sans-serif-light"
                             android:textColor="@color/black"
                             android:gravity="center_vertical"
@@ -194,19 +187,6 @@
 
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/textView_Categorias"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Categorias"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"/>
-
             <LinearLayout
                 android:id="@+id/linearLayout_cards"
                 android:layout_width="match_parent"
@@ -241,7 +221,7 @@
                             android:clickable="true"
                             android:contentDescription="botão que encaminha para diário"
                             android:focusable="true"
-                            android:src="@drawable/icone_pacientes"
+                            android:src="@drawable/ic_pacientes"
                             android:layout_marginTop="10dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -252,7 +232,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="Pacientes"
+                            android:text="@string/botao_pacientes"
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textSize="16sp"
@@ -298,7 +278,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="Agenda"
+                            android:text="@string/botao_agenda"
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textSize="16sp"

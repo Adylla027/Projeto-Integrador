@@ -12,28 +12,50 @@
         <i>   9:00 • consulta presencial</i>
     </string>
 
-
     <string name="texto_formatado_Alex">
     <b>Alex Sorace:</b>
      <i> 10:00 • consulta presencial</i>
     </string>
-
 
     <string name="texto_formatado_Annelise">
     <b>Annelise Amaral:</b>
      <i> 11:00 • consulta presencial</i>
     </string>
 
-
     <string name="texto_formatado_Adylla">
     <b>Adylla Moreira:</b>
      <i> 13:00 • consulta presencial</i>
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="open">Abre menu</string>
-    <string name="close">Fecha menu</string>
+    <string name="nome_profissional">Dra. Maria Souza</string>
+    <string name="car_profissional">Próxima Consulta</string>
+    <string name="nome_de_um_paciente">Ashley Gabriela</string>
+    <string name="horario_consulta">08:00-Presencial</string>
+    <string name="botao_pacientes">Pacientes</string>
+    <string name="botao_agenda">Agenda</string>
+
+
+    <string name="card_diario">Diário</string>
+    <string name="card_data">Data</string>
+
+    <string name="email_cadastro">Insira seu email</string>
+    <string name="cadastro">Cadastre-se</string>
+    <string name="senha_cadastro">Digite sua senha</string>
+    <string name="confirma_cadastro">Confirme sua senha</string>
+    <string name="botao_cadastro">Finalizar</string>
+    <string name="rb_paciente">Paciente</string>
+    <string name="rb_profissional">Profissional</string>
+    <string name="msg_cadastro">By clicking continue, you agree to our Terms of Service and Privacy Policy</string>
+
+    <string name="msg_empty">Preencha o email e a senha!</string>
+    <string name="msg_sucesso_cadastro">Cadastro realizado com sucesso!</string>
+    <string name="msg_erros_salvar_dados">Erro ao salvar dados</string>
+    <string name="msg_erro_cadastro">Erro ao cadastrar</string>
+    <string name="msg_falha_cadastro">Falha no cadastro</string>
+
+    <string name="open">Abre</string>
+    <string name="close">Fecha</string>
 
 </resources>
+
 
