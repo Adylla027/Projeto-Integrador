@@ -3,12 +3,16 @@ package com.adylla.atividade4
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.adylla.atividade4.databinding.FragmentTelaInicialProfissionalBinding
+import com.google.android.material.navigation.NavigationView
 
-class Fragment_Tela_inicial_profissional : Fragment() {
+class Fragment_Tela_inicial_profissional : Fragment(), NavigationView.OnNavigationItemSelectedListener {
 
     private var _binding: FragmentTelaInicialProfissionalBinding? = null
     // Essa propriedade é válida apenas entre onCreateView e onDestroyView.
@@ -29,11 +33,45 @@ class Fragment_Tela_inicial_profissional : Fragment() {
             findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_pacientesFragment)
 
         }
+    }
 
-        //binding.botaofluante2.setOnClickListener {
-            //findNavController().navigate(R.id.action_fragment_Tela_inicial_profissional_to_visualizarAgendamento)
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
-        //}
+        val navController = findNavController()
+
+        val options = NavOptions.Builder()
+            .setLaunchSingleTop(true)
+            .setPopUpTo(navController.graph.startDestinationId, false)
+            .build()
+
+        when (item.itemId) {
+
+            R.id.nav_diario -> {
+                if (navController.currentDestination?.id != R.id.paginaDiario) {
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
+                }
+            }
+
+            R.id.nav_agendamento -> {
+                if (navController.currentDestination?.id != R.id.visualizarAgendamento) {
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
+                }
+            }
+
+            R.id.nav_sair -> {
+                if (navController.currentDestination?.id != R.id.fragmentLogin) {
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentLogin)
+                }
+            }
+
+
+            else -> {
+
+            }
+
+        }
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
 
