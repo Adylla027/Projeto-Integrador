@@ -7,7 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class RegistroDiario(
     var id: String = "",
     var title: String = "",
-    var description: String = ""
+    var description: String = "",
+    var iscompartilhada: Boolean = false
 ) : Parcelable {
     constructor() : this("", "", "")   // construtor vazio exigido pelo Firebase
 }

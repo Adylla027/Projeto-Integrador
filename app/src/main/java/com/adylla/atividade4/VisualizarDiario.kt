@@ -57,8 +57,69 @@ class VisualizarDiario : Fragment() {
             findNavController().navigateUp()
         }
 
+        binding.btnCompartilhar.setOnClickListener{
+            mostrarDialogCompartilhar(registro)
+
+
+        }
+
+        binding.buttonDELETE.setOnClickListener{
+            deleteRegistro(registro)
+
+        }
+
     }
 
+    private fun mostrarDialogCompartilhar(registroDiario: RegistroDiario){
+        AlertDialog.Builder(requireContext())
+            .setTitle("Compartilhar nota")
+            .setMessage("Deseja compartilhar essa nota?")
+            .setPositiveButton("Sim"){dialog,_ ->
+                compartilharNotaProfissional(registroDiario)
+                dialog.dismiss()
+            }
+            .setNegativeButton("Não"){dialog,_ ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+    }
+
+    private fun compartilharNotaProfissional(registroDiario: RegistroDiario){
+        val notaAtualizada = registroDiario.copy(iscompartilhada= true)
+
+        val ref = FirebaseDatabase.getInstance()
+            .getReference("registros")
+            .child(registroDiario.id)
+
+        ref.setValue(notaAtualizada)
+            .addOnSuccessListener {
+                Toast.makeText(requireContext(), "Nota compartilhada!", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Erro ao compartilhar.", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+    private fun deleteRegistro(registro: RegistroDiario) {
+        reference
+            .child( "registros")
+            .child( auth.currentUser?.uid ?: "")
+            .child( registro.id)
+            .removeValue().addOnCompleteListener { result ->
+
+                if (result.isSuccessful) {
+                    Toast.makeText(requireContext(),"Registro deletado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(requireContext(), "Algo deu errado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+    }
 
 }
 

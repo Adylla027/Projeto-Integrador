@@ -106,7 +106,10 @@ class FragmentDiarioTexto : Fragment() {
                     Toast.makeText(requireContext(), "Erro", Toast.LENGTH_SHORT).show()
                 }
             }
+
+
     }
+
 
 
 

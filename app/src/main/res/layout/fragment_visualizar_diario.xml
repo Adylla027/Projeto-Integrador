@@ -37,38 +37,47 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
             <View
                 android:id="@+id/viewlinha"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
+                android:layout_marginTop="?attr/actionBarSize"
                 android:background="@color/black"
                 app:layout_anchor="@+id/toolbar"
-                app:layout_anchorGravity="bottom|center"
-                android:layout_marginTop="?attr/actionBarSize"/>
+                app:layout_anchorGravity="bottom|center" />
 
             <TextView
                 android:id="@+id/textView_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Título"
-                android:textSize="18sp"
+                android:layout_margin="30dp"
                 android:gravity="center"
+                android:hint="Título"
                 android:padding="2dp"
-                android:layout_margin="30dp"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textViewLerDiario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Anotações..."
-                android:textSize="18sp"
+                android:layout_margin="15dp"
                 android:gravity="center"
+                android:hint="Anotações..."
                 android:padding="2dp"
-                android:layout_margin="15dp"/>
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonDELETE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Deletar"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
