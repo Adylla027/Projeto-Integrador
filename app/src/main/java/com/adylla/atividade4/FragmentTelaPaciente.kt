@@ -57,7 +57,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
     private fun getExtra(){
         val email = args.email
         val senha = args.senha
-        Toast.makeText(requireContext(),"Email: $email, Senha: $senha",Toast.LENGTH_SHORT).show()
     }
     private fun setupImageSlider() {
 
