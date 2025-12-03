@@ -75,9 +75,17 @@
                 android:id="@+id/buttonDELETE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:text="Deletar"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginStart="200dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="8dp"
+                android:translationZ="4dp"
+                android:background="@drawable/bg_btn"
+                 />
 
 
         </LinearLayout>

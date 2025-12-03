@@ -55,6 +55,9 @@
 
     <string name="open">Abre</string>
     <string name="close">Fecha</string>
+    <string name="Alert_dialog_mensagem">Deseja compartilhar essa nota?</string>
+    <string name="titulo_diario">Diário</string>
+
 
 </resources>
 

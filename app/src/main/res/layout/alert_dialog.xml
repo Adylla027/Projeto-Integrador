@@ -9,7 +9,7 @@
         android:layout_height="48dp"
         android:layout_margin="15dp"
         android:background="@drawable/bg_edit_text"
-        android:text="Deseja compartilhar essa nota? "
+        android:text="@string/Alert_dialog_mensagem"
         android:padding="10dp" />
 
 </LinearLayout>

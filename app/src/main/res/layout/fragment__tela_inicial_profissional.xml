@@ -24,6 +24,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
+                android:id="@+id/logo_em_profissional"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="250dp"

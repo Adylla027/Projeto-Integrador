@@ -13,6 +13,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/TexviewTitulo_Introducao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bem-Vindo ao nosso app!"
@@ -29,6 +30,7 @@
             android:layout_margin="25dp"/>
 
         <TextView
+            android:id="@+id/TexviewDescricao2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Um espaço dedicado ao cuidado emocional com acolhimento e praticidade"
@@ -43,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sou Paciente"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
@@ -54,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sou Profissional"
+            android:textColor="@color/black"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"

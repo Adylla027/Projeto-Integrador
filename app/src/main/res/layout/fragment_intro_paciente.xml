@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#169EB0"
                 android:text="@string/btn_intro"
+                android:textColor="@color/black"
                 android:background="@drawable/bg_btn"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"

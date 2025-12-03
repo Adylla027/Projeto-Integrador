@@ -31,10 +31,11 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/foto_perfil_diario"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_diario"/>
+                    android:src="@drawable/ic_pacientes"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -42,7 +43,7 @@
                 android:id="@+id/textView_nomePaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fulano de tal"
+                android:text="Paciente"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"

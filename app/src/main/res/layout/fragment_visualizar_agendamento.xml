@@ -31,6 +31,7 @@
                 app:navigationIcon="@drawable/img_voltar">
 
                 <TextView
+                    android:id="@+id/TextviewConsultas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
