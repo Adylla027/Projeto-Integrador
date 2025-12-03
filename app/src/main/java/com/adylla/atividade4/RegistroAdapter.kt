@@ -8,9 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.adylla.atividade4.databinding.EstiloRecyclerviewPaginaDiarioBinding
+import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.util.Locale
 
 class RegistroAdapter(
     private val itemClick: (RegistroDiario) -> Unit
@@ -27,7 +31,6 @@ class RegistroAdapter(
     inner class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val title = itemView.findViewById<TextView>(R.id.textTitulo_diario)
         val data = itemView.findViewById<TextView>(R.id.textView_data)
-        val hora = itemView.findViewById<TextView>(R.id.textView_hora)
     }
 
 
@@ -47,11 +50,12 @@ class RegistroAdapter(
         val diario = registroList[position]
         holder.title.text = diario.title
 
+        holder.data.text = diario.data
+
         holder.itemView.setOnClickListener {
             itemClick(diario)
         }
 
-        val instant =
 
 
 

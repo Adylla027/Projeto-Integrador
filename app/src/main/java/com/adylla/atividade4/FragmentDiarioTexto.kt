@@ -20,6 +20,10 @@ import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
 import java.lang.ref.Reference
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 
 class FragmentDiarioTexto : Fragment() {
 
@@ -77,14 +81,30 @@ class FragmentDiarioTexto : Fragment() {
         val description = binding.inputEditText.text.toString().trim()
 
         if (title.isNotBlank() || description.isNotBlank()){
-            if (novoRegistroDiario) registroDiario = RegistroDiario("", "", "")
-            registroDiario.id = reference.database.reference.push().key ?: ""
+            if (novoRegistroDiario){
+                registroDiario = RegistroDiario()
+
+                val currentDate = getCurrentDateTimeStrings()
+                registroDiario.data = currentDate
+                registroDiario.id = reference.database.reference.push().key ?: ""
+            }
             registroDiario.title = title
             registroDiario.description = description
 
             saveRegistro()
 
         }
+    }
+
+    private fun getCurrentDateTimeStrings(): String {
+        val now = Date()
+
+        val dateFormatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        dateFormatter.timeZone = TimeZone.getTimeZone("UTC")
+
+        val dateString = dateFormatter.format(now)
+
+        return dateString
     }
 
     private fun saveRegistro(){

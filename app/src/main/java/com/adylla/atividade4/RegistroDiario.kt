@@ -9,8 +9,7 @@ data class RegistroDiario(
     var title: String = "",
     var description: String = "",
     var data: String = "",
-    var hora: String = "",
     var iscompartilhada: Boolean = false
 ) : Parcelable {
-    constructor() : this("", "", "", "", "")   // construtor vazio exigido pelo Firebase
+    constructor() : this("", "", "", "")   // construtor vazio exigido pelo Firebase
 }
