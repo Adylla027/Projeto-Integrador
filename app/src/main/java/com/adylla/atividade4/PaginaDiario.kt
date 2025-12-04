@@ -52,8 +52,11 @@ class PaginaDiario : Fragment() {
 
         var menuAberto = false
 
+        //aciona o evento de clique do botão flutuante
         binding.floatBtnAdicionar.setOnClickListener {
+            //lógica que alterna o valor booleano da variável
             menuAberto = !menuAberto
+            //mostra ou esconde o layout do menu
             binding.linearLayoutFloatBtn.visibility =
                 if (menuAberto) View.VISIBLE else View.GONE
         }
@@ -64,19 +67,18 @@ class PaginaDiario : Fragment() {
 
     }
 
+    //chama e aplica configurações no recyclerView
     private fun initRecyclerViewRegistro(){
-
+    //passa como parâmetro lambda o registro
         registroAdapter = RegistroAdapter{ registro ->
+            //função que irá direcionar para visualização
             optionSelected(registro)
-
         }
-
         binding.recyclerViewRegistro.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = registroAdapter
             setHasFixedSize(true)
         }
-
     }
 
     private fun optionSelected(registro: RegistroDiario){
@@ -85,6 +87,7 @@ class PaginaDiario : Fragment() {
         findNavController().navigate(action)
 
     }
+
 
     private fun getRegistro() {
         reference

@@ -4,7 +4,7 @@ import android.content.Context
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 
-
+//Popup que aparece quando o botão de compartilhar é clicado no visualizarDiario
 fun Context.showCompartilharPopup(
     onConfirm: () -> Unit
 

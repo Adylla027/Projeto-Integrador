@@ -43,11 +43,14 @@ class Fragment_Tela_inicial_profissional : Fragment(), NavigationView.OnNavigati
             .setLaunchSingleTop(true)
             .setPopUpTo(navController.graph.startDestinationId, false)
             .build()
-
+        //condição para navegação pelo diário
+        //verifica o itemId que foi clicado
         when (item.itemId) {
-
+            //busca o Id
             R.id.nav_diario -> {
+                //condição para o navController procurar se o usuário já se encontra na página
                 if (navController.currentDestination?.id != R.id.paginaDiario) {
+                    //se não se encontra ele faz a navegação
                     navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
                 }
             }
@@ -64,7 +67,7 @@ class Fragment_Tela_inicial_profissional : Fragment(), NavigationView.OnNavigati
                 }
             }
 
-
+            //se o item clicado não é nenhum dos acima não faz nada
             else -> {
 
             }

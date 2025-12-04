@@ -41,8 +41,6 @@ class fragment_agendamento_profissional : Fragment() {
         }else{
             txtMensagem.text = consultas.joinToString("\n")
         }
-
-
         return view
 
 

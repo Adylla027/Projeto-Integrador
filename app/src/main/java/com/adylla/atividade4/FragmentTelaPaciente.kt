@@ -62,6 +62,7 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
 
         val imageList = ArrayList<SlideModel>()
 
+        //lista que adiciona imagens no carrossel
         imageList.add(SlideModel(R.drawable.imagem4_carrossel))
         imageList.add(SlideModel(R.drawable.imagem_carrossel))
         imageList.add(SlideModel(R.drawable.imagem3_carrossel))
@@ -80,8 +81,6 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
                     navController.navigate(R.id.action_fragmentTelaPaciente_to_paginaDiario)
                 }
             }
-
-
 
             R.id.nav_agendamento ->{
                 if (navController.currentDestination?.id != R.id.visualizarAgendamento){
