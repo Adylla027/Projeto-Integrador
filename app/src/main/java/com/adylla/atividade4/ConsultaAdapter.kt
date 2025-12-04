@@ -40,11 +40,11 @@ class ConsultaAdapter(
     override fun onBindViewHolder(holder: ConsultaViewHolder, position: Int) {
         val consulta = agendaList[position]
 
-        holder.binding.textNomePaciente.text = consulta.nomePaciente ?: ""
-        holder.binding.textViewProfissional.text = consulta.profissional ?: ""
-        holder.binding.textViewData.text = consulta.data ?: ""
-        holder.binding.textViewHorario.text = consulta.horario ?: ""
-        holder.binding.textViewLocal.text = consulta.local ?: ""
+        holder.binding.textNomePaciente.text = consulta.nomePaciente
+        holder.binding.textViewProfissional.text = consulta.profissional
+        holder.binding.textViewData.text = consulta.data
+        holder.binding.textViewHorario.text = consulta.horario
+        holder.binding.textViewLocal.text = consulta.local
 
         holder.binding.root.setOnClickListener {
             itemClick(consulta)

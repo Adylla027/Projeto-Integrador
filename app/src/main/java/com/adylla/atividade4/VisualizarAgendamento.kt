@@ -60,6 +60,8 @@ class VisualizarAgendamento : Fragment() {
 
 
     }
+
+    //verifica se o usuário está logado
     private fun getConsulta() {
         val uid = auth.currentUser?.uid
         if (uid == null) {
@@ -69,7 +71,7 @@ class VisualizarAgendamento : Fragment() {
 
         reference
             .child("agendamentos")
-            .child(uid)  // agora acessando o nó correto
+            .child(uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (!snapshot.exists()) {
@@ -77,6 +79,7 @@ class VisualizarAgendamento : Fragment() {
                         return
                     }
                     val agendaList = mutableListOf<Consulta>()
+                    //verifica se os dados de agendamento existem
                     for (ds in snapshot.children) {
                         val consulta = ds.getValue(Consulta::class.java)
                         if (consulta != null) agendaList.add(consulta)

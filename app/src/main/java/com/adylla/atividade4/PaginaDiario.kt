@@ -89,6 +89,7 @@ class PaginaDiario : Fragment() {
     }
 
 
+    //busca os registros no firebase no nó registros
     private fun getRegistro() {
         reference
             .child("registros")

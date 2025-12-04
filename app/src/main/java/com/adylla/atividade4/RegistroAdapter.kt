@@ -22,6 +22,7 @@ class RegistroAdapter(
 
     private val registroList = mutableListOf<RegistroDiario>()
 
+    //lista para desenhar itens na tela
     fun submitList(newList: List<RegistroDiario>){
         registroList.clear()
         registroList.addAll(newList)
@@ -43,6 +44,7 @@ class RegistroAdapter(
         return RegistroViewHolder(view)
     }
 
+    //captura e exibe as variáveis do jeito que oram preenchidas no banco de dados
     override fun onBindViewHolder(
         holder: RegistroViewHolder,
         position: Int
