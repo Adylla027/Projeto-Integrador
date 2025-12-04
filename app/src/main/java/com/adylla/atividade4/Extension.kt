@@ -5,25 +5,21 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 
 
-fun Context.showEmailPopup(
-    title: String = "Deseja compartilhar?",
-    hint: String = "Digite o email de seu psicólogo",
-    onConfirm: (String) -> Unit
+fun Context.showCompartilharPopup(
+    onConfirm: () -> Unit
 
 ){
 
-    val input = EditText(this)
-    input.hint = hint
-
     AlertDialog.Builder(this)
-        .setTitle(title)
-        .setView(input)
-        .setPositiveButton("Confirmar"){ _, _ ->
-            val email = input.text.toString().trim()
-            onConfirm(email)
-
+        .setTitle("Deseja compartilhar?")
+        .setMessage("Compartilhar essa nota?")
+        .setPositiveButton("Confirmar"){ dialog, _ ->
+            onConfirm()
+            dialog.dismiss()
         }
-        .setNegativeButton("Cancelar", null)
+        .setNegativeButton("Cancelar"){ dialog, _ ->
+            dialog.dismiss()
+        }
         .show()
 
 }

@@ -60,7 +60,6 @@ class VisualizarDiario : Fragment() {
         binding.btnCompartilhar.setOnClickListener{
             mostrarDialogCompartilhar(registro)
 
-
         }
 
         binding.buttonDELETE.setOnClickListener{
@@ -70,19 +69,11 @@ class VisualizarDiario : Fragment() {
 
     }
 
+    //Função que chama o popup de compartilhamento
     private fun mostrarDialogCompartilhar(registroDiario: RegistroDiario){
-        AlertDialog.Builder(requireContext())
-            .setTitle("Compartilhar nota")
-            .setMessage("Deseja compartilhar essa nota?")
-            .setPositiveButton("Sim"){dialog,_ ->
-                compartilharNotaProfissional(registroDiario)
-                dialog.dismiss()
-            }
-            .setNegativeButton("Não"){dialog,_ ->
-                dialog.dismiss()
-            }
-            .create()
-            .show()
+        requireContext().showCompartilharPopup {
+            compartilharNotaProfissional(registroDiario)
+        }
     }
 
     private fun compartilharNotaProfissional(registroDiario: RegistroDiario){

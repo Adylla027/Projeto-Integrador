@@ -27,7 +27,6 @@ class FragmentCadastro : Fragment() {
         return view
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -52,7 +51,6 @@ class FragmentCadastro : Fragment() {
         }
 
     }
-
     private fun validateData(){
         binding.buttnCadastro.setOnClickListener {
 
@@ -69,7 +67,6 @@ class FragmentCadastro : Fragment() {
             }
         }
     }
-
     private fun registerUser(email: String, senha: String) {
         val auth = FirebaseAuth.getInstance()
 
@@ -79,12 +76,13 @@ class FragmentCadastro : Fragment() {
 
                     val uid = auth.currentUser!!.uid
 
+                    //indinca no banco o tipo de usuário de acordo com o radio button preenchido
                     val tipoUsuario = when {
                         binding.rbPaciente.isChecked -> "pacientes"
                         binding.rbPsicologo.isChecked -> "profissionais"
                         else -> "pacientes"
                     }
-
+                    //variável com comando condicional para verificar se radio button do profissional e chama o edit text do crp, se não estiver preenchido não chama
                     val crp = if (binding.rbPsicologo.isChecked) binding.editTextCRP.text.toString().trim() else ""
 
                     //Captura data atual e registra no banco junto com os outros dados
@@ -106,6 +104,7 @@ class FragmentCadastro : Fragment() {
                         profissionalId = ""
                     )
 
+                    //salva os dados no firebase
                     val dbRef = FirebaseDatabase.getInstance().reference
                     dbRef.child(tipoUsuario)
                         .child(uid)
@@ -126,13 +125,11 @@ class FragmentCadastro : Fragment() {
                 Toast.makeText(requireContext(), R.string.msg_falha_cadastro, Toast.LENGTH_LONG).show()
             }
     }
-
     private fun setaVoltar(){
         binding.toolbarCadastro.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentCadastro_to_fragmentLogin)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
