@@ -81,9 +81,27 @@ class FragmentTelaPaciente : Fragment(), NavigationView.OnNavigationItemSelected
                 }
             }
 
+
+
             R.id.nav_agendamento ->{
                 if (navController.currentDestination?.id != R.id.visualizarAgendamento){
                     navController.navigate(R.id.action_fragmentTelaPaciente_to_visualizarAgendamento)
+                }
+            }
+
+            R.id.nav_compartilhados ->{
+                if (navController.currentDestination?.id != R.id.fragmentCompartilhados){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentCompartilhados)
+                }
+            }
+            R.id.nav_favoritos ->{
+                if (navController.currentDestination?.id != R.id.fragmentFavoritos){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentFavoritos)
+                }
+            }
+            R.id.nav_lixeira ->{
+                if (navController.currentDestination?.id != R.id.fragmentLixeira){
+                    navController.navigate(R.id.action_fragmentTelaPaciente_to_fragmentLixeira)
                 }
             }
 

@@ -108,6 +108,15 @@
         <action
             android:id="@+id/action_fragmentTelaPaciente_to_visualizarAgendamento"
             app:destination="@id/visualizarAgendamento" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_fragmentCompartilhados"
+            app:destination="@id/fragmentCompartilhados" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_fragmentLixeira"
+            app:destination="@id/fragmentLixeira" />
+        <action
+            android:id="@+id/action_fragmentTelaPaciente_to_fragmentFavoritos"
+            app:destination="@id/fragmentFavoritos" />
     </fragment>
 
 
@@ -217,6 +226,21 @@
         android:name="com.adylla.atividade4.VisualizarAgendamento"
         android:label="fragment_visualizar_agendamento"
         tools:layout="@layout/fragment_visualizar_agendamento" />
+    <fragment
+        android:id="@+id/fragmentCompartilhados"
+        android:name="com.adylla.atividade4.fragmentCompartilhados"
+        android:label="fragment_compartilhados"
+        tools:layout="@layout/fragment_compartilhados" />
+    <fragment
+        android:id="@+id/fragmentLixeira"
+        android:name="com.adylla.atividade4.fragmentLixeira"
+        android:label="fragment_lixeira"
+        tools:layout="@layout/fragment_lixeira" />
+    <fragment
+        android:id="@+id/fragmentFavoritos"
+        android:name="com.adylla.atividade4.fragmentFavoritos"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
 
 
 </navigation>

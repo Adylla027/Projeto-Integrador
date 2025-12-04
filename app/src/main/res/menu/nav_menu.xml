@@ -4,17 +4,32 @@
 
         <item
             android:id="@+id/nav_diario"
-            android:title="Diário"
+            android:title="@string/menu_diario"
             android:icon="@drawable/ic_menu_caneta"/>
 
         <item
             android:id="@+id/nav_agendamento"
-            android:title="Agendamento"
+            android:title="@string/menu_agendamento"
             android:icon="@drawable/ic_menu_calendario"/>
 
         <item
+            android:id="@+id/nav_compartilhados"
+            android:title="@string/menu_compartilhados"
+            android:icon="@drawable/ic_menu_compartilhar"/>
+
+        <item
+            android:id="@+id/nav_favoritos"
+            android:title="@string/menu_favoritos"
+            android:icon="@drawable/ic_menu_fav"/>
+
+        <item
+            android:id="@+id/nav_lixeira"
+            android:title="@string/menu_lixeira"
+            android:icon="@drawable/ic_menu_lixeira"/>
+
+        <item
             android:id="@+id/nav_sair"
-            android:title="Sair"
+            android:title="@string/menu_sair"
             android:icon="@drawable/ic_menu_sair"/>
 
     </group>

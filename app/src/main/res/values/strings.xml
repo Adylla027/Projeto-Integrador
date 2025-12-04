@@ -57,6 +57,14 @@
     <string name="close">Fecha</string>
     <string name="Alert_dialog_mensagem">Deseja compartilhar essa nota?</string>
     <string name="titulo_diario">Diário</string>
+    <string name="menu_diario">Diário</string>
+    <string name="menu_agendamento">Agendamento</string>
+    <string name="menu_compartilhados">Compartilhados</string>
+    <string name="menu_favoritos">Favoritos</string>
+    <string name="menu_lixeira">Lixeira</string>
+    <string name="menu_sair">Sair</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
